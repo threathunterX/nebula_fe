@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+@import "../../var";
+
+.wb-component-help {
+  width: 100%;
+
+  h2 {
+    border-bottom: none;
+  }
+
+  .component-help-title {
+    position: absolute;
+    top: 20px;
+  }
+
+  .main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 10px 0;
+    box-sizing: border-box;
+
+    .side-menu {
+      width: 20%;
+      max-width: 270px;
+      min-width: 230px;
+      color: $default-font-color;
+      background-color: $body-background-color;
+      margin-right: 10px;
+      border-radius: 5px;
+      box-shadow: $default-box-shadow;
+      font-size: $default-font-size;
+
+      .menu-title {
+        font-size: $middle-font-size;
+      }
+
+      ul {
+        line-height: 40px;
+        height: calc(100% - 52px);
+        overflow: hidden;
+
+        &:hover {
+          overflow: auto;
+        }
+
+        li {
+          padding: 0 20px;
+          cursor: pointer;
+          transition: all 300ms ease;
+
+          &.active,
+          &:hover {
+            font-weight: bold;
+            background-color: $default-black-color;
+          }
+        }
+      }
+    }
+
+    .main-component {
+      flex: 1;
+      overflow: hidden;
+
+      &:hover {
+        overflow-y: auto;
+      }
+    }
+  }
+
+  .component-container {
+    overflow: hidden;
+
+    h2 {
+      font-size: $title-font-size;
+    }
+
+    .component-part {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 12px;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .component-full {
+      box-sizing: border-box;
+      padding: 12px;
+    }
+
+    .component-card {
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      width: 100%;
+      background-color: $sub-background-color;
+      transition: all 300ms ease;
+      color: $default-font-color;
+      margin-bottom: 20px;
+
+      &:hover {
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    .demo-container {
+      border-bottom: $default-border;
+      padding: 42px 20px 50px;
+
+      .demo-easy-toast {
+        width: 355px;
+      }
+    }
+
+    .demo-describe {
+      position: relative;
+      padding: 17px 16px 15px 20px;
+      font-size: $small-font-size;
+
+      .key-word {
+        padding: 2px 5px;
+        border-radius: 2px;
+        background-color: $text-label-background-color;
+        margin: 0 5px;
+      }
+
+      .demo-title {
+        margin: 0 -8px;
+        padding: 0 8px;
+        position: absolute;
+        top: -10px;
+        line-height: $default-line-height;
+        background-color: $sub-background-color;
+        font-size: $default-font-size;
+      }
+    }
+
+    .demo-code {
+      color: $sub-font-color;
+      border-top: 1px dashed $default-border-color;
+      padding: 10px 15px;
+      font-size: $small-font-size;
+      overflow: hidden;
+      white-space: nowrap;
+      line-height: $default-line-height;
+
+      &:hover {
+        overflow-x: auto;
+      }
+    }
+  }
+}
+
+.dialog-mask .component-dialog-class {
+  width: 200px;
+}

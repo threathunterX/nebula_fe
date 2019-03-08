@@ -1,0 +1,494 @@
+@import "../../../var";
+
+.wd-crawler {
+  .crawler-visit {
+    background-color: $sub-background-color;
+    margin-bottom: 24px;
+    color: $sub-font-color;
+    font-size: $small-font-size;
+
+    .care-delete-container {
+      float: right;
+      margin-top: -2px;
+
+      .main-btn {
+        padding: 6px 10px;
+        background-color: $text-label-background-color;
+        border: none;
+
+        &:first-child {
+          margin-right: 8px;
+        }
+
+        &:hover {
+          background-color: $default-button-color;
+
+          .iconfont {
+            color: $default-white-color;
+          }
+        }
+
+        .iconfont {
+          color: $default-font-color;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .crawler-chart {
+      padding: 8px 28px 50px;
+      position: relative;
+
+      .tab-btn-container {
+        margin-bottom: 18px;
+
+        .small-btn {
+          padding: 1px 24px;
+          background-color: transparent;
+          border: none;
+          margin-right: 10px;
+          border-radius: 0;
+        }
+
+        .active {
+          background-color: $text-label-background-color;
+        }
+      }
+
+      .card-list {
+        height: 170px;
+        width: 100%;
+        position: relative;
+        white-space: nowrap;
+        overflow: visible;
+        margin-bottom: 24px;
+
+        .card-container {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+
+          .card-body {
+            height: 100%;
+            position: absolute;
+            transition: left ease 500ms;
+          }
+        }
+
+        .card-item {
+          margin-right: 2px;
+          width: 186px;
+          height: 100%;
+          padding: 10px 8px;
+          background-color: $default-background-color;
+          border-radius: 2px;
+          display: inline-block;
+          box-sizing: border-box;
+          vertical-align: top;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $text-label-background-color;
+
+            .card-footer {
+              display: block;
+            }
+
+            .is-follow {
+              display: none;
+            }
+          }
+
+          &.active {
+            background-color: $text-label-background-color;
+          }
+
+          .page-url {
+            height: 28px;
+            line-height: 14px;
+            white-space: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-all;
+            margin-bottom: 24px;
+          }
+
+          .card-content1,
+          .card-content2 {
+            display: flex;
+            padding: 0 8px;
+            margin-bottom: 23px;
+            font-size: $default-font-size;
+            color: $default-white-color;
+            line-height: 17px;
+
+            .item-count {
+              flex: 1;
+            }
+
+            .count-icon {
+              vertical-align: top;
+              font-size: 16px;
+              width: 17px;
+              height: 17px;
+              color: $default-font-color;
+              fill: $default-font-color;
+              margin-right: 8px;
+            }
+
+            .unit {
+              color: $sub-font-color;
+              font-size: $small-font-size;
+            }
+          }
+
+          .card-footer {
+            line-height: 14px;
+            padding: 0 4px;
+            display: none;
+
+            .iconfont {
+              font-size: 14px;
+              margin-right: 12px;
+            }
+          }
+        }
+
+        .prev-btn,
+        .next-btn {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          width: 30px;
+          height: 30px;
+          background-color: rgba($default-white-color, 0.2);
+          border-radius: 15px;
+          text-align: center;
+          line-height: 30px;
+          z-index: 2;
+          border: none;
+
+          &:disabled {
+            border: none !important;
+            background-color: rgba($default-white-color, 0.3) !important;
+          }
+        }
+
+        .prev-btn {
+          left: -15px;
+        }
+
+        .next-btn {
+          right: -15px;
+        }
+      }
+    }
+  }
+
+  .charts-container {
+    h3 {
+      background: $sub-title-background-color;
+      padding: 6px 18px;
+      line-height: 17px;
+      font-size: 12px;
+      font-weight: normal;
+      color: $sub-font-color;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 24px;
+
+      .title {
+        color: $default-font-color;
+      }
+
+      .uri-stem {
+        margin-left: 10px;
+        padding-left: 6px;
+        border-left: $light-bg-border;
+      }
+    }
+
+    .charts-content {
+      display: flex;
+
+      .chart-title-col1 {
+        width: 57px;
+        margin-right: 10px;
+
+        .chart-title {
+          width: 50px;
+          height: 50px;
+          text-align: right;
+          padding-right: 6px;
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          border-right: $light-bg-border;
+          margin-bottom: 10px;
+
+          p {
+            line-height: 17px;
+          }
+
+          .iconfont {
+            font-size: 12px;
+
+            &:hover {
+              color: $default-main-color;
+            }
+          }
+        }
+      }
+
+      .chart-title-col2 {
+        flex: 1;
+        position: relative;
+
+        .chart-body {
+          height: 50px;
+          margin-bottom: 10px;
+
+          &#status {
+            height: 70px;
+          }
+
+          .svg-container {
+            overflow: visible;
+
+            .axis-line:first-child {
+              stroke: none;
+            }
+          }
+        }
+
+        .chart-hover-text {
+          position: fixed;
+          z-index: 9;
+          background: rgba($default-black-color, 0.8);
+          box-shadow: 4px 4px 8px 0 rgba($default-black-color, 0.5);
+          padding: 0 12px;
+          width: 200px;
+          box-sizing: border-box;
+          color: $default-white-color;
+          pointer-events: none;
+          line-height: 17px;
+
+          .hover-date {
+            line-height: 14px;
+            padding: 8px 0;
+            border-bottom: $default-border;
+          }
+
+          .page-request-text {
+            padding: 8px 0;
+            border-bottom: $default-border;
+
+            .total-legend,
+            .risk-legend {
+              width: 10px;
+              height: 10px;
+              border-radius: 5px;
+              margin-right: 4px;
+              display: inline-block;
+              box-sizing: border-box;
+            }
+
+            .total-legend {
+              background-color: $text-label-background-color;
+              border: $light-bg-border;
+              margin-bottom: 2px;
+            }
+
+            .risk-legend {
+              background-color: $default-main-color;
+              border: 1px solid $default-main-color;
+            }
+          }
+
+          .delay-text {
+            padding: 8px 0;
+            border-bottom: $default-border;
+
+            .delay-legend {
+              display: inline-block;
+              width: 10px;
+              margin-right: 4px;
+              height: 1px;
+              background-color: $default-main-color;
+              vertical-align: middle;
+              margin-top: -2px;
+            }
+          }
+
+          .upload-text {
+            padding: 8px 0;
+            border-bottom: $default-border;
+
+            .upload-legend {
+              width: 10px;
+              height: 10px;
+              border-radius: 5px;
+              margin-right: 4px;
+              display: inline-block;
+              background-color: $light-input-background-color;
+            }
+          }
+
+          .data-text {
+            color: $default-main-color;
+            margin-left: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dialog-mask .crawler-manage-dialog {
+  width: 548px;
+
+  .dialog-title {
+    padding: 12px 24px 0;
+    height: 32px;
+
+    > span {
+      font-size: $default-font-size;
+    }
+  }
+
+  .dialog-content {
+    padding: 16px 24px;
+  }
+
+  .crawler-manage-list {
+    position: relative;
+    color: $default-font-color;
+    line-height: 14px;
+    font-size: $small-font-size;
+    width: 500px;
+    max-height: 400px;
+    min-height: 100px;
+    overflow: auto;
+    margin-bottom: 4px;
+
+    li {
+      padding: 8px 12px;
+      border-radius: 2px;
+      background-color: $text-label-background-color;
+      margin-bottom: 4px;
+      display: flex;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .icon-bars {
+        margin-right: 8px;
+      }
+
+      .keyword-text {
+        flex: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .cancel-follow,
+      .recovery {
+        width: 55px;
+        text-align: right;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .care-input {
+    input {
+      width: 390px;
+      line-height: 18px;
+      height: 30px;
+      padding: 6px 12px;
+    }
+
+    .commit {
+      margin-left: 27px;
+      margin-right: 19px;
+    }
+
+    span {
+      font-size: $small-font-size;
+      color: $default-font-color;
+      cursor: pointer;
+    }
+  }
+
+  .care-add-button {
+    line-height: 20px;
+    font-size: 14px;
+    color: $default-font-color;
+    text-align: center;
+    padding: 7px 0 2px;
+    cursor: pointer;
+
+    &.disabled {
+      color: $disabled-button-font-color;
+      cursor: not-allowed;
+    }
+
+    .icon-pluscircleo {
+      margin-right: 8px;
+      font-size: 12px;
+      vertical-align: top;
+      color: inherit;
+
+      &::before {
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+.rc-tooltip.card-overlay {
+  font-size: $small-font-size;
+}
+
+.status-text {
+  padding: 8px 0;
+
+  .describe {
+    color: $sub-font-color;
+  }
+
+  .data-text {
+    float: right;
+  }
+
+  .xx2-legend,
+  .xx3-legend,
+  .xx4-legend,
+  .xx5-legend {
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
+    display: inline-block;
+  }
+
+  .xx2-legend {
+    background-color: $light-input-background-color;
+  }
+
+  .xx3-legend {
+    background-color: $text-label-background-color;
+  }
+
+  .xx4-legend {
+    background-color: $default-main-color;
+  }
+
+  .xx5-legend {
+    background-color: #0084af;
+  }
+}

@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+@import "../../var";
+
+.wb-god-eye {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: $sub-background-color;
+  overflow: hidden;
+  padding: 24px 24px 18px 32px;
+  box-sizing: border-box;
+
+  .top-container {
+    display: flex;
+    height: calc(100% - 283px);
+    overflow: visible;
+  }
+
+  .bottom-container {
+    display: flex;
+    height: 283px;
+    overflow: visible;
+  }
+
+  .map-bg {
+    width: calc(100% - 700px);
+    height: 100%;
+    flex: 1;
+    margin-right: 24px;
+
+    .svg-container {
+      overflow: visible;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+
+  h2 {
+    padding: 8px 16px;
+  }
+
+  .card-container {
+    width: 600px;
+    height: 100%;
+    overflow: scroll;
+    color: $default-font-color;
+    font-size: $default-font-size;
+    z-index: 1;
+
+    .card-item {
+      display: flex;
+      background-color: rgba($monitor-light-card-background-color, 0.1);
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .score {
+        width: 140px;
+        border-right: $light-bg-border;
+        line-height: 33px;
+        box-sizing: border-box;
+
+        .ip-label {
+          background-color: $default-title-background-color;
+          color: $default-white-color;
+          line-height: 20px;
+          padding: 0 7px;
+          margin-bottom: 10px;
+        }
+
+        .score-label {
+          text-align: center;
+
+          i,
+          svg {
+            margin-right: 8px;
+          }
+
+          .iconfont {
+            font-size: $title-font-size;
+            vertical-align: top;
+
+            &::before {
+              vertical-align: top;
+            }
+          }
+
+          span {
+            font-size: 24px;
+          }
+
+          .error {
+            color: $default-error-color;
+          }
+
+          .warning {
+            color: $default-warning-color;
+          }
+
+          .default {
+            color: $default-main-color;
+          }
+        }
+
+        .time {
+          line-height: 20px;
+          text-align: center;
+          margin-bottom: 12px;
+        }
+      }
+
+      .labels {
+        flex: 1;
+        position: relative;
+        padding: 12px 0 0 20px;
+
+        .label-container {
+          overflow: hidden;
+          margin-bottom: 55px;
+
+          .label-item {
+            float: left;
+            margin-right: 16px;
+          }
+
+          .label-count {
+            padding: 0 8px;
+            background-color: $default-button-color;
+            color: $default-white-color;
+            border-radius: 10px;
+            margin-left: 4px;
+          }
+        }
+
+        .detail {
+          line-height: 17px;
+          font-size: $small-font-size;
+          color: $sub-font-color;
+          position: absolute;
+          bottom: 12px;
+
+          span {
+            margin-right: 20px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+
+          .page {
+            max-width: 430px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+
+  .strategies-area-container {
+    width: 600px;
+    height: 100%;
+    z-index: 1;
+
+    .bar-container {
+      height: 246px;
+      padding: 24px;
+      box-sizing: border-box;
+      background-color: rgba($monitor-card-background-color, 0.1);
+      display: flex;
+      font-size: $small-font-size;
+      color: $default-font-color;
+
+      .city-name,
+      .tag-name {
+        margin-right: 13px;
+        width: 61px;
+        overflow: hidden;
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 17px;
+      }
+
+      .percent-bar {
+        flex: 1;
+        height: 6px;
+        background-image: linear-gradient(-270deg, rgba($default-main-color, 0.4) 0%, rgba($default-success-color, 0.4) 100%);
+        border-radius: 3px;
+
+        > div {
+          height: 100%;
+          background-image: linear-gradient(-270deg, $default-main-color 0%, $default-success-color 100%);
+          border-radius: 3px;
+        }
+      }
+
+      .area {
+        flex: 1;
+        margin-right: 12px;
+      }
+
+      .label {
+        flex: 1;
+      }
+
+      .label-item {
+        display: flex;
+        margin-top: 2px;
+        align-items: center;
+      }
+    }
+  }
+
+  .strategies-trend-container {
+    flex: 1;
+    height: 100%;
+    z-index: 1;
+    margin-right: 24px;
+
+    .svg-container {
+      background-color: transparent;
+
+      .axis-line,
+      .grid-line {
+        stroke: $default-title-background-color;
+        opacity: 0.4;
+      }
+
+      .data-line {
+        stroke-width: 2;
+      }
+    }
+
+    .charts-container {
+      height: 246px;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      background-color: rgba($monitor-card-background-color, 0.1);
+      font-size: $small-font-size;
+      color: $default-font-color;
+
+      .line {
+        position: relative;
+        height: 60%;
+      }
+
+      .bar {
+        position: relative;
+        height: 40%;
+
+        .svg-container {
+          overflow: visible;
+        }
+      }
+    }
+  }
+}

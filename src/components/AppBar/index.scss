@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+@import "../../var";
+
+.app-title-bar {
+  font-size: $small-font-size;
+  color: $default-font-color;
+  line-height: 42px;
+
+  span,
+  .hard-disk-container {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+  }
+  .hard-disk-container:hover .disk-percent {
+    display: block;
+  }
+  .hard-disk-container{
+    margin-right: 10px;
+  }
+  .disk-percent {
+    display: none;
+    position: absolute;
+    bottom: -15px;
+    left: 32px;
+    background: rgba($default-black-color, 0.7);
+    color: $default-white-color;
+    padding: 5px;
+    border-radius: 2px;
+    white-space: nowrap;
+    pointer-events: none;
+    font-size: $small-font-size;
+    z-index: 999;
+    line-height: 20px;
+  }
+
+  .redq {
+    margin-right: 8px;
+  }
+
+  .switch {
+    margin-top: 11px;
+  }
+
+  .mini-chart {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 4px 0;
+    height: 42px;
+    width: 62px;
+    margin-right: 8px;
+
+    .svg-container {
+      background-color: transparent;
+      overflow: visible;
+    }
+  }
+
+  .hard-disk {
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 24px 0 8px;
+    width: 42px;
+    height: 2px;
+    background: linear-gradient(to right, $default-success-color, $default-main-color);
+
+    .active {
+      float: right;
+      background: #4b6c7d;
+      height: 100%;
+    }
+  }
+}
+
+.sidebar-icon {
+  height: 15px;
+  width: 17px;
+  padding: 13px;
+  cursor: pointer;
+
+  &:hover {
+    fill: $default-button-color;
+  }
+}

@@ -1,0 +1,31 @@
+@import "../../var";
+
+.loading-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  color: $default-font-color;
+  font-size: $default-font-size;
+  line-height: $default-line-height;
+
+  span {
+    color: $default-button-color;
+    cursor: pointer;
+  }
+
+  .loading-error-icon {
+    color: $disabled-button-font-color;
+    font-size: 24px;
+    transform: translateY(4px);
+    display: inline-block;
+    margin-right: 10px;
+  }
+}

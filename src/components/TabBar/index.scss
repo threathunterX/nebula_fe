@@ -1,0 +1,71 @@
+@import "../../var";
+
+.tab-bar {
+  width: 100%;
+  white-space: nowrap;
+  display: flex;
+  color: $default-font-color;
+  font-size: $default-font-size;
+  line-height: $default-line-height;
+  overflow: hidden;
+
+  &:hover {
+    overflow-x: auto;
+  }
+
+  .iconfont {
+    font-size: 16.8px;
+  }
+
+  .tab-bar-svg-icon {
+    float: left;
+  }
+
+  .tab-item {
+    padding: 8px 16px;
+    border-bottom: $default-border;
+    transition: all 500ms ease;
+
+    svg {
+      transition: inherit;
+      fill: $default-font-color;
+    }
+
+    i {
+      transition: inherit;
+      color: $default-font-color;
+    }
+
+    .tab-text {
+      margin-left: 5px;
+    }
+
+    cursor: pointer;
+  }
+
+  .active {
+    color: $default-button-color;
+    border-bottom: 1px solid $default-button-color;
+
+    svg {
+      fill: $default-button-color;
+    }
+
+    i {
+      color: $default-button-color;
+    }
+  }
+
+  .disabled {
+    color: $disabled-button-color;
+    cursor: not-allowed;
+
+    svg {
+      fill: $disabled-button-color;
+    }
+
+    i {
+      color: $disabled-button-color;
+    }
+  }
+}

@@ -1,0 +1,427 @@
+@import "../../var";
+
+.wb-home {
+  overflow: auto;
+
+  > div {
+    display: flex;
+    margin-top: 24px;
+    box-sizing: border-box;
+
+    > section {
+      flex: 1;
+      position: relative;
+
+      &:not(:first-of-type) {
+        margin-left: 16px;
+      }
+    }
+
+    &:first-of-type {
+      display: flex;
+      justify-content: space-between;
+      height: 120px;
+
+      .wc-paper {
+        padding: 0 8px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      height: 322px;
+    }
+
+    &:nth-of-type(3) {
+      height: 365px; //todo 10行的高度
+    }
+
+    &:nth-of-type(4) {
+      height: 365px; //todo 10行的高度
+      margin-bottom: 50px;
+    }
+  }
+
+  .tag {
+    float: right;
+    min-width: 56px;
+    font-size: $small-font-size;
+    line-height: 17px;
+    color: $default-font-color;
+    background: $text-label-background-color;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  .legend {
+    float: right;
+    color: $sub-font-color;
+    font-size: 12px;
+    line-height: 17px;
+
+    > i {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 4px;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+
+    &:first-of-type > i {
+      background: $default-warning-color;
+    }
+
+    &:nth-of-type(2) {
+      margin-right: 10px;
+
+      > i {
+        background: $default-main-color;
+      }
+    }
+  }
+
+  .comparison {
+    font-size: 14px;
+    line-height: 20px;
+    color: $sub-font-color;
+    display: flex;
+    padding: 12px 0;
+
+    > div {
+      flex: 1;
+      text-align: center;
+
+      &:not(:first-of-type) {
+        border-left: $default-border;
+      }
+    }
+
+    em {
+      font-size: 24px;
+      font-weight: bold;
+      font-style: normal;
+      color: $default-main-color;
+    }
+  }
+
+  .charts {
+    section:nth-of-type(1) {
+      width: 70%;
+      flex: none;
+    }
+
+    section:nth-of-type(2) {
+      width: 30%;
+    }
+
+    .warning-and-click {
+      height: 269px;
+      width: 100%;
+
+      .warning-chart {
+        height: 40%;
+      }
+
+      .click-chart {
+        height: 60%;
+      }
+    }
+
+    .warning-area {
+      position: relative;
+      height: 269px;
+      width: 100%;
+      z-index: 9999;
+    }
+  }
+
+  .attacked-url {
+    height: 312px;
+
+    .url-count {
+      width: 70px;
+    }
+
+    .url-text {
+      position: absolute;
+      top: -10px;
+      background-color: $text-label-background-color;
+      border-radius: 2px;
+      line-height: $default-line-height;
+      padding: 0 5px;
+      box-sizing: border-box;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $default-main-color;
+        color: $default-white-color;
+      }
+    }
+  }
+
+  .hour-strategies {
+    height: 312px;
+
+    .name-text {
+      position: absolute;
+      top: -10px;
+      background-color: $text-label-background-color;
+      border-radius: 2px;
+      line-height: $default-line-height;
+      padding: 0 5px;
+      box-sizing: border-box;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $default-main-color;
+        color: $default-white-color;
+      }
+    }
+  }
+}
+
+.wb-risk-items {
+  position: relative;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 24px;
+
+    > h2 {
+      border-color: transparent;
+    }
+  }
+
+  .items-warpper {
+    height: calc(100% - 52px);
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  button {
+    border: none;
+    font-size: 14px;
+    background: transparent;
+    margin-right: 12px;
+  }
+
+  //form {
+  //  display: inline-block;
+  //  margin-left: 18px;
+  //}
+  //
+  //.btn-search {
+  //  margin-left: 10px;
+  //}
+  .home-search {
+    float: right;
+
+    i {
+      width: 12px;
+      display: inline-block;
+      transition: all 300ms ease;
+      opacity: 1;
+    }
+
+    input {
+      vertical-align: top;
+      box-sizing: border-box;
+      width: 60px;
+      height: 24px;
+      transition: all 300ms ease;
+    }
+
+    .focused-input {
+      width: 100%;
+    }
+  }
+
+  .cell-score {
+    width: 7%;
+  }
+
+  .cell-start-time {
+    width: 13%;
+  }
+
+  .cell-ip {
+    width: 10%;
+
+    .ip-text {
+      float: left;
+      background-color: $text-label-background-color;
+      border-radius: 2px;
+      line-height: $default-line-height;
+      padding: 0 5px;
+      box-sizing: border-box;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $default-main-color;
+        color: $default-white-color;
+      }
+    }
+  }
+
+  .cell-users-count {
+    width: 7%;
+  }
+
+  .cell-most-visited {
+    width: 25%;
+
+    .most-visited-text {
+      float: left;
+      background-color: $text-label-background-color;
+      border-radius: 2px;
+      line-height: $default-line-height;
+      padding: 0 5px;
+      box-sizing: border-box;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $default-main-color;
+        color: $default-white-color;
+      }
+    }
+  }
+
+  .cell-tags {
+    width: 20%;
+    line-height: 16px;
+
+    .tag-text {
+      margin-right: 3px;
+      font-size: $small-font-size;
+    }
+
+    .tag-num {
+      font-family: AvenirNext-DemiBold;
+      font-size: $small-font-size;
+      display: inline-block;
+      border-radius: 8px;
+      background-color: $default-main-color;
+      padding: 0 6px;
+      color: $black-font-color;
+      margin-right: 4px;
+    }
+
+    .hit-tags {
+      float: left;
+      padding: 2px 0;
+    }
+  }
+
+  .cell-strategies {
+    width: 20%;
+
+    .icon-container {
+      float: left;
+
+      .iconfont {
+        font-size: $title-font-size;
+      }
+    }
+
+    .strategies-icon {
+      height: 18px;
+      width: 18px;
+      fill: $default-font-color;
+    }
+
+    .strategies-num {
+      text-align: center;
+      position: relative;
+      left: -8px;
+      top: 4px;
+      display: inline-block;
+      padding: 0 3px;
+      height: 15px;
+      line-height: 16px;
+      font-size: $small-font-size;
+      background-color: $default-warning-color;
+      color: $black-font-color;
+      border-radius: 8px;
+    }
+  }
+
+  .cell-status {
+    width: 100px;
+
+    button {
+      margin-right: 8px;
+      font-size: $small-font-size;
+    }
+
+    .risk-btn {
+      background: $error-button-color;
+      border-radius: 2px;
+      color: $default-white-color;
+      line-height: $default-line-height;
+      padding: 0 5px;
+      border: none;
+      outline: none;
+
+      &:hover {
+        background-color: $error-button-hover-color;
+      }
+
+      &:active {
+        background-color: $error-button-active-color;
+      }
+    }
+
+    .mistake-btn {
+      background: $warning-button-color;
+      border-radius: 2px;
+      color: $default-white-color;
+      line-height: $default-line-height;
+      padding: 0 5px;
+      border: none;
+      outline: none;
+
+      &:hover {
+        background-color: $warning-button-hover-color;
+      }
+
+      &:active {
+        background-color: $warning-button-active-color;
+      }
+    }
+
+    .risk-text {
+      color: $default-error-color;
+      line-height: $default-line-height;
+    }
+
+    .mistake-text {
+      color: $default-warning-color;
+      line-height: $default-line-height;
+    }
+
+    .overtime-text {
+      color: $default-main-color;
+      line-height: $default-line-height;
+    }
+  }
+}

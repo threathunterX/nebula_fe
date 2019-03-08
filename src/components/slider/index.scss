@@ -1,0 +1,219 @@
+@import "../util/index.scss";
+@import "../../var";
+
+$default-slider-background: #525e7f;
+$disabled-track-background: #8692ad;
+$disabled-handle-background: #b6cce4;
+$mark-color: #282e3c;
+
+.wd-slider {
+  position: relative;
+  height: 4px;
+  border-radius: 2px;
+  background-color: $default-slider-background;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &-track {
+    position: absolute;
+    left: 0;
+    height: 4px;
+    border-radius: 6px;
+    background-color: $default-main-color;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+  }
+
+  &:hover {
+    background-color: $default-slider-background;
+
+    .wd-slider-handle {
+      display: block;
+      border-color: $default-main-color;
+    }
+  }
+
+  &:hover &-track {
+    background-color: $default-main-color;
+  }
+
+  &-handle {
+    position: absolute;
+    margin-left: -7px;
+    margin-top: -5px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: solid 2px $default-main-color;
+    background-color: $default-white-color;
+    z-index: 2;
+    transition: border-color 0.3s ease;
+    display: none;
+
+    &:hover {
+      border-color: $default-main-color;
+    }
+
+    &:active {
+      box-shadow: 0 0 0 2px #2db7f5;
+    }
+  }
+
+  &-mark {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    font-size: 12px;
+    z-index: 3;
+  }
+
+  &-mark-text {
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    color: #999;
+
+    &-active {
+      color: #666;
+    }
+  }
+
+  &-step {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    z-index: 1;
+  }
+
+  &-dot {
+    position: absolute;
+    top: -2px;
+    margin-left: -4px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #e9e9e9;
+    background-color: $default-white-color;
+    cursor: pointer;
+    border-radius: 50%;
+    vertical-align: middle;
+
+    &:first-child {
+      margin-left: -4px;
+    }
+
+    &:last-child {
+      margin-left: -4px;
+    }
+
+    &-active {
+      border-color: $default-main-color;
+    }
+  }
+
+  &-disabled {
+    cursor: not-allowed !important;
+
+    .wd-slider-track {
+      background-color: $disabled-track-background !important;
+    }
+
+    &:hover .wd-slider-handle {
+      display: none;
+    }
+  }
+}
+
+.wd-tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+// slider tooltip style
+.wd-tooltip {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  z-index: 4;
+  visibility: visible;
+
+  &-hidden {
+    display: none;
+  }
+
+  &-placement-points-bc-tc {
+    padding: 4px 0 8px;
+  }
+
+  &-inner {
+    padding: 6px;
+    min-width: 24px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #666;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+
+  &-arrow {
+    bottom: -4px;
+    left: 50%;
+    margin-left: -4px;
+    border-width: 4px 4px 0;
+    border-top-color: #6c6c6c;
+  }
+
+  &-placement-points-bc-tc &-arrow {
+    bottom: 4px;
+    left: 50%;
+    margin-left: -4px;
+    border-width: 4px 4px 0;
+    border-top-color: #666;
+  }
+}
+
+.wd-slider-container {
+  position: relative;
+
+  .mark-icon {
+    position: absolute;
+    top: 1px;
+    z-index: 1;
+    height: 2px;
+    border-right: 1px solid $mark-color;
+  }
+
+  .cur-mark {
+    position: absolute;
+    z-index: 1;
+    height: 2px;
+    border-right: 1px solid $default-main-color;
+  }
+
+  .cur-mark-up {
+    top: -4px;
+  }
+
+  .cur-mark-down {
+    top: 6px;
+  }
+
+  .disabled-mark {
+    border-right: 1px solid $disabled-track-background;
+  }
+}

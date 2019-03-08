@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@import "../../var";
+
+.god-eye-switch {
+  height: 100%;
+  margin-left: 11px;
+  font-size: $small-font-size;
+  color: $default-font-color;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+
+  .icon-iconfontdesktop {
+    font-size: 17px;
+    margin-right: 8px;
+  }
+
+  span {
+    vertical-align: top;
+  }
+}

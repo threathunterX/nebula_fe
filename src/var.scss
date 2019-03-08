@@ -1,0 +1,136 @@
+/* 默认值 */
+$default-padding: 0;
+
+/**
+ * 通用
+ */
+//主色调
+$default-main-color: #22c3f7;
+//默认白色
+$default-white-color: #fff;
+//默认黑色
+$default-black-color: #000;
+//默认错误颜色
+$default-error-color: #ff5e76;
+//默认警告色
+$default-warning-color: #f97869;
+//默认成功颜色
+$default-success-color: #7cdcce;
+//亮灰色
+$light-gray-color: #b6cce4;
+//辅助色1
+$other-color1: #ffef7d;
+//辅助色2
+$other-color2: #906ec8;
+//默认行高
+$default-line-height: 20px;
+//默认border
+$default-border: 1px solid #353d52;
+$default-border-color: #353d52;
+//亮色背景border
+$light-bg-border: 1px solid #525e7f;
+//亮色背景border颜色
+$light-bg-border-color: #525e7f;
+//checkboxborder
+$check-box-border: 1px solid #8691ad;
+//默认阴影
+$default-box-shadow: 0 10px 18px 0 rgba($default-black-color, 0.3);
+
+/**
+ * 按钮
+ */
+//默认按钮颜色
+$default-button-color: #22c3f7;
+//默认按钮鼠标悬停颜色
+$default-button-hover-color: #1890b6;
+//默认按钮2
+$default-button-color2: #fff;
+//默认按钮2鼠标悬停颜色
+$default-button2-hover-color: #cecece;
+//错误按钮颜色
+$error-button-color: #ff5e76;
+//错误按钮悬停颜色
+$error-button-hover-color: #cc4b5e;
+//错误按钮按下颜色
+$error-button-active-color: #7f2f38;
+//警告按钮颜色
+$warning-button-color: #f97869;
+//错误按钮悬停颜色
+$warning-button-hover-color: #c65f53;
+//错误按钮按下颜色
+$warning-button-active-color: #793833;
+//失效按钮颜色
+$disabled-button-color: #525e7f;
+//滚动条按钮颜色
+$scroll-button-color: #8691ad;
+
+//幽灵按钮鼠标悬停颜色
+$ghost-button-hover-color: #22c3f7;
+$ghost-button2-hover-color: #cecece;
+
+//失效按钮颜色字体
+$disabled-button-font-color: #8691ad;
+
+//按钮边距
+$default-button-padding: 6px 16px;
+$small-button-padding: 2px 10px;
+
+/**
+ * 背景
+ */
+//深色背景颜色
+$body-background-color: #1b1f2a;
+//默认背景色
+$default-background-color: #232836;
+//次级背景色
+$sub-background-color: #282e3c;
+//文字标签背景色
+$text-label-background-color: #353d52;
+//输入框背景色
+$input-background-color: #353d52;
+$input-disabled-color: #8692ad;
+//亮色输入框背景色
+$light-input-background-color: #525e7f;
+//暗色输入框背景色
+$dark-input-background-color: #2c3345;
+//选择框背景色
+$selector-background-color: #353d52;
+//监控大屏深色卡片背景色
+$monitor-card-background-color: #8691ad;
+//监控大屏浅色卡片背景色
+$monitor-light-card-background-color: #b6cce4;
+
+/**
+ * 标题
+ */
+//默认标题颜色
+$default-title-background-color: #525e7f;
+//次级标题颜色
+$sub-title-background-color: #353d52;
+
+/**
+ * f2
+ * 字体
+ */
+//默认字体颜色
+$default-font-color: #b6cce4;
+//黑色字体
+$black-font-color: #1b1f2a;
+//次级字体颜色
+$sub-font-color: #8691ad;
+//标题文字颜色
+$title-font-color: #f2f2f2;
+
+//最小字体
+$min-font-size: 10px;
+//小号字体
+$small-font-size: 12px;
+$font-size-s: 12px;
+//默认字体大小
+$default-font-size: 14px;
+//稍大字体大小
+$middle-font-size: 16px;
+//标题字体大小
+$title-font-size: 18px;
+//大号字体
+$large-font-size: 20px;

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Force-Directed Graph</title>
+<style>
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  #viz {
+    width: 100%;
+    height: 100%;
+  }
+
+</style>
+<body>
+  <div id="viz"></div>
+  <script src="//d3js.org/d3.v3.min.js"></script>
+  <script src="http://language.media.mit.edu/lib/d3plus.full.min.js"></script>
+  <script src="./lodash.js"></script>
+  <script>
+
+    (function () {
+      var dataPrefix, dataset, datasetToFile, datasetToOverlap, datasetToStats, familyToColor, renderTimeout;
+
+      selectedDataset = 'books';
+      dataPrefix = "./";
+      datasetToFile = {
+        twitter: 'twitter_network.json',
+        wikipedia: 'wikipedia_network.json',
+        books: 'books_network.json'
+      };
+      datasetToOverlap = {
+        twitter: 1.0,
+        wikipedia: 1.0,
+        books: 7.0
+      };
+      datasetToStats = {
+        twitter: ['Number of Tweets', 'Number of Users', 'Average Tweets per User', 'Number of Multilinguals', 'Average Tweets per Multilingual'],
+        wikipedia: ['Number of Edits', 'Number of Editors', 'Average Edits per Editor', 'Number of Multilinguals', 'Average Tweets per Multilingual'],
+        books: ['Translations From', 'Translations To', 'Out Degree', 'In Degree']
+      };
+      familyToColor = {
+        'Afro-Asiatic': '#CC6680',
+        'Altaic': '#9CFF9C',
+        'Amerindian': '#4E994E',
+        'Austronesian': '#FF87FF',
+        'Caucasian': '#BAFEFF',
+        'Creoles and pidgins': '#9933FF',
+        'Dravidian': '#F7E406',
+        'Indo-European': '#7470FF',
+        'Niger-Kordofanian': '#FF6666',
+        'Other': '#999999',
+        'Sino-Tibetan': '#E67E5A',
+        'Tai': '#FFFF00',
+        'Uralic': '#9999FF'
+      };
+      dataset = dataPrefix + datasetToFile[selectedDataset];
+      if (renderTimeout) {
+        clearTimeout(renderTimeout);
+      }
+      return renderTimeout = setTimeout(function () {
+        return d3.json(dataset, function (error, data) {
+          var d, datasetStats, id, langName, languageToIDMapping, languagesList, languagesToIDsCollection,
+            languagesToIDsMapping, overlap, visualization, _i, _len, _ref;
+          overlap = datasetToOverlap[selectedDataset];
+          datasetStats = datasetToStats[selectedDataset];
+          languagesList = [];
+          languagesToIDsCollection = [];
+          languagesToIDsMapping = {};
+          _ref = data.data;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            d = _ref[_i];
+            id = d.id;
+            langName = d["Language Name"];
+            languagesList.push(langName);
+            languageToIDMapping = {};
+            languageToIDMapping[langName] = id;
+            languagesToIDsCollection.push(languageToIDMapping);
+            languagesToIDsMapping[langName] = id;
+          }
+          languagesToIDsCollection = _.sortBy(languagesToIDsCollection, function (d) {
+            return Object.keys(d)[0];
+          });
+          return visualization =
+            d3plus.viz()
+              .dev(false)
+              .data(data.data)
+              .type("network")
+              .container("#viz")
+              .font({
+                family: 'Arial',
+                weight: 'bold',
+                color: "#000000"
+              })
+              .text("Language Name")
+              .descs({
+                "Number of Speakers (millions)": "Number of speakers of this language (both native and non-native) in the millions"
+              })
+              .legend({
+                text: "Family Name",
+                size: 60,
+                value: false
+              })
+              .labels({
+                padding: 0,
+                value: true,
+                text: "Language Code",
+                font: {
+                  transform: "uppercase"
+                }
+              })
+              .size({
+                value: "Number of Speakers (millions)"
+              })
+              .nodes(data.nodes)
+              .nodes({
+                overlap: overlap
+              })
+              .edges(data.edges)
+              .edges({
+                arrows: false,
+                color: "#222",
+                size: {
+                  scale: 1.0,
+                  value: "coocurrences"
+                },
+                opacity: "opacity",
+                label: "coocurrences"
+              })
+              .tooltip({
+                font: {
+                  color: "#FFF"
+                }
+              })
+              .tooltip(["Family Name", "Number of Speakers (millions)", "GDP per Capita (dollars)", "Eigenvector Centrality"].concat(datasetStats))
+              .background("transparent")
+              .id("id")
+              .color(function (d) {
+                return familyToColor[d["Family Name"]];
+              })
+              .draw();
+        });
+      }, 200);
+    })();
+
+  </script>
+</body>

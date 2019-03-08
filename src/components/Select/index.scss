@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+@import '~rc-select/assets/index';
+@import "../../var";
+
+.rc-select {
+  color: $default-white-color;
+  line-height: 20px;
+  width: 180px;
+  font-size: $small-font-size;
+
+  .rc-select-selection--multiple {
+    min-height: 0;
+
+    .rc-select-selection__choice {
+      margin-top: 2px;
+      background-color: $default-background-color;
+      border-radius: 2px;
+      padding: 0 10px;
+
+      &:hover .rc-select-selection__choice__content {
+        margin-left: -5px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .rc-select-selection__placeholder {
+    padding: 2px 0;
+    color: $sub-font-color;
+  }
+
+  .rc-select-search--inline .rc-select-search__field {
+    background-color: transparent;
+    padding: 0;
+    color: $default-white-color;
+  }
+
+  .rc-select-selection__rendered {
+    padding-bottom: 0;
+  }
+
+  .rc-select-selection {
+    background-color: $input-background-color;
+    border: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+  }
+
+  .rc-select-selection__choice__remove {
+    color: $default-white-color;
+
+    &:hover {
+      color: $default-button-color;
+    }
+  }
+
+  .rc-select-selection--single {
+    height: 24px;
+    line-height: 20px;
+
+    .rc-select-selection__rendered {
+      height: 24px;
+      line-height: 20px;
+    }
+
+    .rc-select-selection__rendered {
+      margin-left: 8px;
+      padding-right: 8px;
+    }
+
+    .rc-select-selection-selected-value {
+      padding: 2px 0;
+    }
+  }
+}
+
+.rc-select-selection__clear {
+  right: 8px;
+  line-height: 22px;
+}
+
+.rc-select-focused .rc-select-selection {
+  border-color: $default-main-color;
+  box-shadow: none;
+}
+
+.rc-select-enabled .rc-select-selection:hover {
+  box-shadow: none;
+}
+
+.rc-select-enabled .rc-select-selection:active {
+  border-color: $default-main-color;
+}
+
+.rc-select-allow-clear .rc-select-selection--single .rc-select-selection__rendered {
+  padding-right: 25px;
+}
+
+.rc-select-focused .rc-select-selection {
+  border: 1px solid $default-main-color;
+  box-shadow: none;
+}
+
+.rc-select-dropdown-menu {
+  max-height: 260px;
+  overflow: auto;
+}
+
+.rc-select-arrow {
+  display: none;
+}
+
+.rc-select-dropdown {
+  background-color: $body-background-color;
+  border: none;
+  box-shadow: none;
+  z-index: 999;
+
+  li {
+    &.rc-select-dropdown-menu-item {
+      padding: 2px 8px;
+      font-size: $small-font-size;
+      line-height: 24px;
+      color: $sub-font-color;
+    }
+
+    &.rc-select-dropdown-menu-item-active,
+    &.rc-select-dropdown-menu-item-selected {
+      background-color: $default-button-color;
+      color: $default-white-color;
+    }
+  }
+}

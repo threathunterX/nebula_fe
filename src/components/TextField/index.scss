@@ -1,0 +1,24 @@
+@import "../../var";
+
+.text-field {
+  display: inline-block;
+  position: relative;
+
+  input {
+    width: 100%;
+    height: 100%;
+    box-sizing: inherit;
+    font-size: inherit;
+  }
+
+  .error-border {
+    border: 1px solid $default-error-color;
+  }
+
+  .prompt {
+    position: absolute;
+    line-height: $default-line-height;
+    font-size: $min-font-size;
+    color: $default-error-color;
+  }
+}

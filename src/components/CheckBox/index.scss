@@ -1,0 +1,46 @@
+@import "../../var";
+
+.check-box-icon {
+  background-color: $input-background-color;
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  line-height: 12px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border: $check-box-border;
+  border-radius: 2px;
+  text-align: center;
+  cursor: pointer;
+
+  i {
+    color: transparent;
+    font-weight: bold;
+    font-size: $small-font-size;
+    transform: scale(0.8) translateY(1px);
+    display: inline-block;
+  }
+
+  &.checked {
+    background-color: $default-main-color;
+    border: 1px solid $default-main-color;
+
+    i {
+      color: $default-white-color;
+    }
+  }
+
+  &.disabled {
+    background-color: $disabled-button-color;
+    cursor: not-allowed;
+
+    &.checked {
+      background-color: $disabled-button-color;
+      border: 1px solid $disabled-button-color;
+
+      i {
+        color: $default-font-color;
+      }
+    }
+  }
+}

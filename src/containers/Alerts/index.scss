@@ -1,0 +1,447 @@
+@import "../../var";
+
+.wd-name-list {
+  overflow: auto;
+
+  .chart {
+    background-color: $sub-background-color;
+    padding: 10px 5px;
+    margin-bottom: 24px;
+
+    h2 {
+      padding: 2px 8px;
+      border-bottom: none;
+    }
+
+    .chart-container {
+      height: 130px;
+    }
+  }
+
+  .search-container {
+    background-color: $sub-background-color;
+    margin-bottom: 24px;
+    overflow: hidden;
+
+    h2 {
+      .icon-reload {
+        font-size: $default-font-size;
+        float: right;
+        margin-right: 11px;
+        cursor: pointer;
+
+        &:hover {
+          color: $default-button-color;
+        }
+      }
+    }
+
+    .date-picker-container {
+      width: calc((100% - 100px) / 2);
+    }
+
+    .date-picker-input {
+      border-radius: 2px 0 0 2px;
+      width: calc(100% - 20px);
+    }
+
+    .date-picker-icon {
+      display: inline-block;
+      border-radius: 0 2px 2px 0;
+      line-height: 16px;
+      background: $input-background-color;
+      padding: 4px 8px 4px 0;
+    }
+
+    .search-content {
+      display: flex;
+      padding: 12px 44px 18px;
+      font-size: $small-font-size;
+      color: $default-font-color;
+
+      .search-col-30 {
+        width: 30%;
+      }
+
+      .search-col-40 {
+        width: 40%;
+      }
+
+      .search-item {
+        padding: 6px 0;
+
+        .label {
+          display: inline-block;
+          text-align: right;
+          margin-right: 10px;
+          width: 50px;
+          vertical-align: top;
+        }
+
+        .input-item {
+          width: calc(100% - 80px);
+          max-width: 220px;
+        }
+
+        .button-group {
+          font-size: $small-font-size;
+          display: inline-block;
+
+          button {
+            background: $disabled-button-color;
+            color: $default-white-color;
+            border: none;
+            border-right: $default-border;
+            padding: 0 5px;
+            outline: none;
+            width: 50px;
+            border-radius: 0;
+            line-height: 25px;
+
+            &:first-child {
+              border-radius: 2px 0 0 2px;
+            }
+
+            &:last-child {
+              border-radius: 0 2px 2px 0;
+              border-right: none;
+            }
+          }
+
+          .active {
+            background-color: $default-button-color;
+            color: $default-white-color;
+          }
+        }
+      }
+    }
+
+    .search-footer {
+      text-align: center;
+      margin-bottom: 24px;
+
+      button {
+        border: 1px solid $default-button-color;
+        padding: 6px 16px;
+        font-size: 13px;
+        line-height: 16px;
+        margin-right: 18px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .search,
+      .add {
+        background-color: transparent;
+        color: $default-button-color;
+
+        &:hover {
+          background-color: $default-button-color;
+          color: $default-white-color;
+        }
+      }
+
+      .search-valid {
+        background-color: $default-button-color;
+        color: $default-white-color;
+
+        &:hover {
+          background-color: $default-button-hover-color;
+          color: $default-white-color;
+          border: 1px solid $default-button-hover-color;
+        }
+      }
+    }
+  }
+
+  .result-container {
+    width: 100%;
+    margin-bottom: 56px;
+    overflow: hidden;
+
+    .result-table {
+      background-color: $sub-background-color;
+      height: 589px;
+      padding-bottom: 40px;
+
+      h2 {
+        .ghost-btn,
+        .main-btn {
+          line-height: 13px;
+          float: right;
+        }
+
+        .ghost-btn {
+          width: 110px;
+        }
+
+        .main-btn {
+          margin-right: 8px;
+          width: 100px;
+
+          .icon-upload {
+            margin-right: 2px;
+            color: inherit;
+          }
+
+          .icon-loading {
+            color: $default-main-color;
+            font-size: $title-font-size;
+            margin-right: 4px;
+
+            &::before {
+              display: inline-block;
+              animation: rolling 1s infinite linear;
+            }
+          }
+        }
+
+        svg {
+          width: 14px;
+          height: 14px;
+          margin-right: 4px;
+        }
+      }
+
+      .result-title {
+        margin-right: 17px;
+      }
+
+      .test-list {
+        margin-right: 16px;
+      }
+
+      .item-list {
+        display: inline-block;
+        font-size: $small-font-size;
+        color: $sub-font-color;
+        cursor: pointer;
+
+        svg {
+          fill: $sub-font-color;
+        }
+
+        &:hover {
+          color: $default-white-color;
+
+          svg {
+            fill: $default-white-color;
+          }
+        }
+      }
+
+      .active {
+        color: $default-white-color;
+
+        svg {
+          fill: $default-white-color;
+        }
+      }
+
+      .icon-delete {
+        cursor: pointer;
+        font-size: 12px;
+        margin-right: 20px;
+      }
+
+      .items-warpper {
+        height: calc(100% - 54px);
+
+        .pagination-container {
+          text-align: center;
+          border-top: $default-border;
+          margin-top: 1px;
+        }
+
+        .risk-table {
+          height: 100%;
+
+          .waring-btn {
+            float: left;
+            background-color: $text-label-background-color;
+            border-radius: 2px;
+            line-height: $default-line-height;
+            padding: 0 4px;
+            box-sizing: border-box;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 100px;
+            cursor: pointer;
+            margin-right: 8px;
+
+            &:hover {
+              background-color: $default-main-color;
+              color: $default-white-color;
+            }
+          }
+
+          .show-only {
+            background-color: transparent;
+            cursor: text;
+
+            &:hover {
+              background-color: transparent;
+              color: inherit;
+            }
+          }
+
+          svg {
+            height: 14px;
+            width: 14px;
+            vertical-align: middle;
+            fill: $default-white-color;
+            margin-right: 8px;
+          }
+
+          button {
+            width: 34px;
+            background-color: $text-label-background-color;
+            height: 20px;
+            line-height: 20px;
+            color: $default-white-color;
+            margin-right: 8px;
+            border: none;
+
+            &:hover {
+              background-color: $default-button-color;
+            }
+          }
+
+          .invalid {
+            color: $sub-font-color;
+
+            &:hover {
+              background-color: $text-label-background-color;
+            }
+          }
+
+          .scene:hover {
+            color: $default-main-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.alerts-dialog-content {
+  padding: 0 40px;
+
+  .content-item {
+    display: flex;
+    margin-bottom: 8px;
+
+    .label {
+      display: block;
+      width: 23%;
+      text-align: right;
+      margin-right: 20px;
+      color: $default-font-color;
+      line-height: 32px;
+      font-size: 14px;
+    }
+
+    .input-item {
+      flex: 1;
+      height: 32px;
+      line-height: 30px;
+      font-size: $default-font-size;
+      color: $default-font-color;
+      background-color: $dark-input-background-color;
+
+      input {
+        font-size: $default-font-size;
+        background-color: $dark-input-background-color;
+      }
+    }
+
+    .reader {
+      background-color: transparent;
+    }
+  }
+}
+
+.alerts-dialog-content.confirm {
+  .content-item {
+    margin-bottom: 0;
+  }
+
+  label {
+    width: 25%;
+  }
+}
+
+.wd-table-expend-data {
+  background-color: $sub-title-background-color;
+  padding: 18px;
+
+  .loading-text {
+    color: $default-font-color;
+    font-size: $small-font-size;
+    text-align: center;
+  }
+
+  .expend-item-container {
+    background-color: $sub-background-color;
+    padding: 7px 0 8px;
+    font-size: $small-font-size;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    header {
+      line-height: 17px;
+      cursor: pointer;
+      padding: 0 24px;
+
+      .iconfont {
+        color: $default-font-color;
+        margin-right: 6px;
+      }
+
+      .item-index {
+        color: $default-main-color;
+      }
+
+      .item-json {
+        display: inline-block;
+        width: 618px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: $sub-font-color;
+        vertical-align: top;
+      }
+    }
+
+    .item-container {
+      padding: 12px 57px 6px;
+      margin-top: 6px;
+      border-top: $default-border;
+      line-height: 17px;
+      color: $default-font-color;
+
+      .obj-item {
+        margin-bottom: 4px;
+        font-size: $small-font-size;
+        width: 618px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        .obj-key {
+          color: $default-main-color;
+        }
+
+        .obj-value-number {
+          color: $default-white-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@import "../../var";
+
+.label-picker {
+  width: 220px;
+  overflow: hidden;
+  font-size: $small-font-size;
+
+  .label-selectable {
+    float: left;
+    line-height: 19px;
+    background: $body-background-color;
+    padding: 0 10px;
+    border-radius: 10px;
+    color: $sub-font-color;
+    margin: 3px;
+    cursor: pointer;
+  }
+
+  .active {
+    background: $default-button-color;
+    color: $default-white-color;
+  }
+
+  .label-disable {
+    float: left;
+    line-height: 19px;
+    background-color: transparent;
+    border: $light-bg-border;
+    color: $default-font-color;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin: 3px;
+  }
+}

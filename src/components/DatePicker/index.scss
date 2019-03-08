@@ -1,0 +1,314 @@
+@import "../../var";
+
+.date-picker-container {
+  border: none;
+  display: inline-block;
+  background: $input-background-color;
+  border-radius: 2px;
+
+  &.disabled {
+    input,
+    .date-picker-icon {
+      cursor: not-allowed;
+      color: $sub-font-color;
+    }
+  }
+
+  .date-picker-input {
+    background-color: transparent;
+    vertical-align: top;
+    width: calc(100% - 20px);
+
+    &:focus {
+      border: none;
+    }
+  }
+
+  .date-picker-icon {
+    background-color: transparent;
+    display: inline-block;
+    line-height: 16px;
+    padding: 4px 8px 4px 0;
+    vertical-align: top;
+  }
+}
+
+.date-picker-mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 500ms ease;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .date-picker {
+    position: absolute;
+    width: 240px;
+    background-color: $body-background-color;
+    box-shadow: $default-box-shadow;
+    border: none;
+    border-radius: 2px;
+    font-family: "PingFangSC-Light";
+    line-height: $default-line-height;
+    padding: 10px;
+    box-sizing: border-box;
+    color: $default-font-color;
+
+    &-header {
+      text-align: center;
+      position: relative;
+
+      a {
+        color: $default-font-color;
+        font-size: $small-font-size;
+        text-decoration: none;
+        cursor: pointer;
+        padding: 0 5px;
+        display: inline-block;
+        vertical-align: top;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .pre-year,
+      .pre-month,
+      .next-year,
+      .next-month {
+        position: absolute;
+        font-family: Arial, "Hiragino Sans GB", "Microsoft Yahei", "Microsoft Sans Serif", sans-serif;
+      }
+
+      .pre-year {
+        left: 0;
+      }
+
+      .pre-month {
+        left: 25px;
+      }
+
+      .next-year {
+        right: 0;
+      }
+
+      .next-month {
+        right: 25px;
+      }
+
+      .month-year-title {
+        font-weight: bold;
+        display: inline-block;
+      }
+    }
+
+    &-footer {
+      padding-top: 10px;
+      text-align: center;
+
+      a {
+        cursor: pointer;
+      }
+
+      .footer-container {
+        text-align: right;
+        font-size: $small-font-size;
+      }
+
+      .to-time-picker {
+        padding: 0 10px;
+      }
+
+      .to-now {
+        float: left;
+      }
+
+      .to-today {
+        cursor: pointer;
+        font-size: $small-font-size;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .calendar-body {
+    width: 100%;
+    text-align: center;
+    font-size: $small-font-size;
+    padding: 10px 0;
+
+    .weekday,
+    .weekend {
+      font-weight: normal;
+      width: 31px;
+    }
+
+    th {
+      padding: 5px 0;
+    }
+
+    .calendar-day-cell {
+      padding: 1px 0;
+    }
+
+    .calendar-day {
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      margin: 0 auto;
+      border-radius: 100%;
+
+      &.selected,
+      &:hover {
+        background: $default-main-color;
+        color: $default-white-color;
+      }
+    }
+
+    .prev-month,
+    .next-month {
+      color: $disabled-button-color;
+
+      .calendar-day:hover {
+        background: $default-main-color;
+        color: $disabled-button-color;
+      }
+    }
+
+    .calendar-today {
+      border: 1px solid $default-main-color;
+    }
+  }
+
+  .time-picker {
+    height: 182px;
+    display: flex;
+
+    ul {
+      flex: 1;
+      overflow: hidden;
+      border-right: $default-border;
+
+      &:hover {
+        overflow: auto;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+
+      li {
+        line-height: 24px;
+        height: 24px;
+        font-size: $small-font-size;
+        text-align: center;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          background-color: $default-main-color;
+          color: white;
+        }
+      }
+    }
+
+    .hour-list,
+    .minute-list,
+    .second-list {
+      overflow: hidden;
+    }
+  }
+
+  .month-picker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 10px;
+    background-color: $body-background-color;
+
+    .month-picker-body {
+      height: 212px;
+      text-align: center;
+    }
+
+    .month-item-container {
+      width: 33.3%;
+      height: 53px;
+      padding: 8px 0;
+      float: left;
+      font-size: $small-font-size;
+
+      .month-item {
+        width: 46px;
+        margin: 0 auto;
+        border-radius: 4px;
+        display: block;
+        height: 37px;
+        line-height: 37px;
+        cursor: pointer;
+        text-decoration: none;
+        color: $default-font-color;
+
+        &.active,
+        &:hover {
+          background-color: $default-main-color;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .year-picker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    padding: 10px;
+    background-color: $body-background-color;
+
+    .year-picker-body {
+      height: 212px;
+      text-align: center;
+    }
+
+    .year-item-container {
+      width: 33.3%;
+      height: 53px;
+      padding: 8px 0;
+      float: left;
+      font-size: $small-font-size;
+
+      .year-item {
+        width: 46px;
+        margin: 0 auto;
+        border-radius: 4px;
+        display: block;
+        height: 37px;
+        line-height: 37px;
+        cursor: pointer;
+        text-decoration: none;
+        color: $default-font-color;
+
+        &.active,
+        &:hover {
+          background-color: $default-main-color;
+          color: white;
+        }
+      }
+    }
+  }
+}

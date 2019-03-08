@@ -1,0 +1,20 @@
+@import "../../var";
+
+.license {
+  padding: 0 10px;
+  bottom: 20px;
+  position: absolute;
+  display: flex;
+
+  .label i {
+    color: $default-main-color;
+    font-size: 10px;
+    margin-right: 8px;
+  }
+
+  .info {
+    flex: 1;
+    font-size: $small-font-size;
+    color: $sub-font-color;
+  }
+}

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+@import "../../var";
+@import '~rc-tooltip/assets/bootstrap';
+
+.rc-tooltip.easy-toast {
+  opacity: 1;
+  font-size: $small-font-size;
+  pointer-events: none;
+
+  .rc-tooltip-arrow {
+    opacity: 0.8;
+  }
+
+  .rc-tooltip-inner {
+    min-height: 0;
+    background-color: rgba($default-black-color, 0.8);
+    border-radius: 2px;
+  }
+}

@@ -1,0 +1,61 @@
+@import '~rc-switch/assets/index';
+@import "../../var";
+
+.rc-switch {
+  width: 36px;
+  font-size: 10px;
+  height: 18px;
+  line-height: 16px;
+  background-color: $default-background-color;
+  border: 1px solid $default-background-color;
+
+  &::after {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.rc-switch-checked {
+  border: 1px solid $default-main-color;
+  background-color: $default-main-color;
+
+  &::after {
+    left: 18px;
+  }
+}
+
+.rc-switch-inner {
+  font-size: 11px;
+  left: 18px;
+}
+
+.rc-switch-disabled {
+  background-color: $disabled-button-color !important;
+  border-color: $disabled-button-color !important;
+
+  .rc-switch-inner {
+    color: $disabled-button-font-color !important;
+  }
+
+  &::after {
+    background-color: $disabled-button-font-color !important;
+  }
+}
+
+.long-btn.rc-switch {
+  width: 48px;
+}
+
+.long-btn.rc-switch-checked::after {
+  left: 30px;
+}
+
+.table-item.rc-switch {
+  background-color: $default-warning-color;
+  border: 1px solid $default-warning-color;
+}
+
+.table-item.rc-switch-checked {
+  border: 1px solid $default-success-color;
+  background-color: $default-success-color;
+}

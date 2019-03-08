@@ -1,0 +1,72 @@
+@import "../../var";
+
+.selector {
+  line-height: 20px;
+  height: 24px;
+  padding-right: 8px;
+  background-color: $selector-background-color;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: inline-block;
+
+  &.disabled {
+    cursor: not-allowed;
+
+    input {
+      cursor: not-allowed;
+    }
+
+    .iconfont {
+      color: $disabled-button-font-color;
+    }
+  }
+
+  input:focus {
+    border: none;
+  }
+
+  .selector-text {
+    width: 100%;
+    box-sizing: border-box;
+    height: 22px;
+    padding-right: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  i {
+    padding-left: 8px;
+    position: relative;
+    left: -20px;
+    top: 2px;
+  }
+}
+
+.tree-selector.active {
+  border: 1px solid $default-main-color;
+}
+
+.selector-list.multiple {
+  color: $default-font-color;
+}
+
+.item {
+  > .counters,
+  > .variable-search-select {
+    left: 221px;
+  }
+
+  > .fields {
+    width: 222px;
+  }
+}
+
+.counters,
+.fields {
+  > .item {
+    width: 50%;
+  }
+}

@@ -1,0 +1,19 @@
+.avatar {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: auto;
+  user-select: none;
+  transition: all 300ms ease;
+}
+
+.avatar-narrow {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: auto;
+  user-select: none;
+  transition: all 300ms ease;
+}

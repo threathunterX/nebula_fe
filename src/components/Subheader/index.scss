@@ -1,0 +1,14 @@
+@import "../../var";
+
+.wc-subheader {
+  width: 100%;
+  box-sizing: border-box;
+  color: $title-font-color;
+  font-size: $default-font-size;
+  font-weight: 500;
+  line-height: 48px;
+
+  a {
+    color: $sub-font-color;
+  }
+}

@@ -1,0 +1,16 @@
+export const API_BASE = '/api/';
+// export const API_BASE = 'http://172.16.10.65:9998/';
+export const externalConfig = true;
+// http://172.16.10.65:20/
+export const influxDbConfig = {
+  host: '139.196.74.210',
+  port: 9086,
+  database: 'fe',
+  username: 'root',
+  password: 'influxdbthreathunter',
+  schema: []
+};
+
+export const metricsSwitchOn = window.metricsConfig.metricsSwitchOn;
+
+export const version = '2.15.0';

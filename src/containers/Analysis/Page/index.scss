@@ -1,0 +1,630 @@
+@charset "UTF-8";
+
+@import "../../../var";
+
+.wd-page-analysis.container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 58px);
+  min-height: 735px;
+
+  .page-search {
+    margin-top: 24px;
+    margin-bottom: 12px;
+
+    .page-search-input {
+      height: 37px;
+      padding: 8px 0 8px 16px;
+      width: 515px;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      border: none;
+      font-size: $default-font-size;
+    }
+
+    .iconfont {
+      height: 37px;
+      background-color: $input-background-color;
+      vertical-align: top;
+      transform: scale(1);
+      padding: 8px 12px;
+      box-sizing: border-box;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      cursor: pointer;
+    }
+  }
+
+  .page-container {
+    height: calc(100% - 110px);
+    min-height: 625px;
+    background-color: $sub-background-color;
+
+    .page-analysis-detail-container {
+      padding: 16px 20px;
+    }
+
+    .data-table {
+      height: 100%;
+    }
+
+    .page-data {
+      height: 100%;
+
+      .body-table-container {
+        height: calc(100% - 78px);
+      }
+
+      .page-text {
+        position: absolute;
+        width: 100%;
+        top: -10px;
+        text-align: left;
+        display: flex;
+
+        span {
+          flex: 1;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        .page-icon-container {
+          display: none;
+          width: 50px;
+
+          .iconfont {
+            margin-left: 12px;
+          }
+        }
+      }
+
+      .hovered .page-icon-container {
+        display: block;
+      }
+
+      tbody .cell-content {
+        text-align: right;
+      }
+
+      .iconfont {
+        cursor: pointer;
+
+        &:hover {
+          color: $default-main-color;
+        }
+      }
+
+      .table-item-list {
+        position: absolute;
+        z-index: 99;
+        right: 0;
+        width: 132px;
+        background: $default-background-color;
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.3);
+        border-radius: 2px;
+        line-height: 18px;
+        font-weight: normal;
+
+        .active {
+          color: $default-main-color;
+        }
+
+        li {
+          padding: 4px 8px;
+          cursor: pointer;
+
+          .icon-check {
+            float: right;
+            color: inherit;
+          }
+
+          &:hover {
+            background-color: $default-main-color;
+            color: $default-white-color;
+          }
+        }
+      }
+    }
+  }
+
+  .analysis-search {
+    float: right;
+  }
+
+  .click-chart {
+    background-color: $sub-background-color;
+    padding: 10px 5px;
+    margin-bottom: 24px;
+
+    h2 {
+      padding: 2px 8px;
+      border-bottom: none;
+    }
+
+    .chart-container {
+      height: 130px;
+    }
+  }
+
+  .trend-area {
+    margin-bottom: 24px;
+
+    .tab {
+      display: flex;
+      font-size: 14px;
+
+      .tab-item {
+        width: 106px;
+        height: 36px;
+        line-height: 36px;
+        box-sizing: border-box;
+        color: $sub-font-color;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .active {
+        color: $default-button-color;
+        border-top: 2px solid $default-button-color;
+        background-color: $sub-background-color;
+      }
+    }
+  }
+
+  .data-table-container {
+    margin-bottom: 30px;
+  }
+
+  .data-table {
+    position: relative;
+    flex: 1;
+    background-color: $sub-background-color;
+
+    .title-describe {
+      margin-left: 8px;
+      font-size: $small-font-size;
+      color: $sub-font-color;
+      font-weight: normal;
+    }
+
+    .search-container {
+      float: right;
+      display: flex;
+      font-size: $small-font-size;
+      color: $default-font-color;
+      line-height: 25px;
+
+      input {
+        width: 180px;
+      }
+
+      label {
+        margin-right: 8px;
+      }
+
+      .switch {
+        margin-top: 2px;
+        margin-right: 8px;
+      }
+
+      .search-form {
+        width: 220px;
+        float: right;
+        background-color: $input-background-color;
+        text-align: center;
+        height: 25px;
+        line-height: 25px;
+        border-radius: 2px;
+
+        i {
+          width: 12px;
+          display: inline-block;
+          transition: all 300ms ease;
+          opacity: 1;
+        }
+
+        input {
+          vertical-align: top;
+          box-sizing: border-box;
+          width: 150px;
+          height: 24px;
+          transition: all 300ms ease;
+        }
+
+        .focused-input {
+          width: 100%;
+        }
+      }
+    }
+
+    .user-data {
+      margin-bottom: 30px;
+    }
+
+    .main-col {
+      color: $default-main-color;
+    }
+
+    .host-text-container {
+      height: 20px;
+    }
+
+    .host-text,
+    .host-url-text {
+      padding: 0 4px;
+      border-radius: 2px;
+      max-width: 100%;
+      box-sizing: border-box;
+      position: absolute;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .host-url-text {
+      background-color: $text-label-background-color;
+    }
+
+    .selected,
+    .hovered {
+      .host-url-text {
+        background-color: $default-main-color;
+        color: $default-white-color;
+        cursor: pointer;
+      }
+    }
+
+    .filter-container .filter-item-container {
+      .active {
+        color: $sub-font-color;
+      }
+
+      .filter-item:hover {
+        color: $default-white-color;
+      }
+    }
+  }
+}
+
+.wd-page-analyze {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 30px !important;
+
+  h1 {
+    span {
+      margin-right: 4px;
+    }
+
+    > .iconfont {
+      font-size: 10px;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+
+    .child {
+      font-size: $default-font-size;
+      color: $default-main-color;
+    }
+  }
+
+  .analysis-search {
+    float: right;
+  }
+
+  .click-chart {
+    background-color: $sub-background-color;
+    padding: 10px 5px;
+    margin-bottom: 24px;
+
+    h2 {
+      padding: 2px 8px;
+      border-bottom: none;
+    }
+
+    .chart-container {
+      height: 130px;
+    }
+  }
+
+  .trend-area {
+    margin-bottom: 24px;
+
+    .trend-area-container {
+      position: relative;
+    }
+
+    .tab {
+      display: flex;
+      font-size: 14px;
+
+      .tab-item {
+        width: 106px;
+        height: 36px;
+        line-height: 36px;
+        box-sizing: border-box;
+        color: $sub-font-color;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .active {
+        color: $default-button-color;
+        border-top: 2px solid $default-button-color;
+        background-color: $sub-background-color;
+      }
+    }
+  }
+
+  .contrast-btns {
+    font-size: $small-font-size;
+    color: $default-white-color;
+    padding: 0 12px;
+    margin-bottom: 16px;
+    height: 26px;
+
+    button,
+    span {
+      position: relative;
+      margin-right: 12px;
+      line-height: 25px;
+      width: 80px;
+      border: none;
+      color: $default-font-color;
+      background-color: $text-label-background-color;
+    }
+
+    .main-btn {
+      background-color: $default-error-color;
+      color: $default-white-color;
+    }
+
+    .long-text {
+      width: 92px;
+    }
+  }
+
+  .data-contrast {
+    position: relative;
+    display: flex;
+    margin-bottom: 30px;
+
+    .data-table {
+      flex: 1;
+      margin-right: 16px;
+      height: 373px;
+      background-color: $sub-background-color;
+      position: relative;
+
+      .page-data {
+        height: calc(100% - 53px);
+      }
+
+      .data-item {
+        width: 100px;
+      }
+
+      .main-col {
+        color: $default-error-color;
+      }
+
+      .page-text {
+        display: inline-block;
+        background-color: $text-label-background-color;
+        padding: 0 4px;
+        border-radius: 2px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $default-main-color;
+          color: $default-white-color;
+        }
+      }
+    }
+
+    .page-chart {
+      flex: 1;
+      height: 373px;
+      background-color: $sub-background-color;
+      position: relative;
+
+      h2 {
+        border-bottom: none;
+      }
+
+      .page-chart-container {
+        height: calc(100% - 52px);
+        padding-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      .chart-tip {
+        font-size: $small-font-size;
+        color: $sub-font-color;
+        overflow: hidden;
+
+        i {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          border-radius: 100%;
+          margin-right: 4px;
+        }
+
+        > div {
+          float: right;
+          margin-right: 8px;
+
+          .data-main-point {
+            background-color: $default-error-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.page-analysis-detail-container,
+.page-analysis-detail-dialog {
+  .dialog-content {
+    padding-top: 0 !important;
+  }
+
+  .page-analysis-detail-header {
+    color: $default-white-color;
+    font-size: $default-font-size;
+    line-height: 18px;
+    padding-bottom: 10px;
+
+    h4 {
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+
+    .tags-container {
+      overflow: hidden;
+
+      .tag-item {
+        padding: 1px 10px;
+        border: $light-bg-border;
+        border-radius: 11px;
+        font-size: $small-font-size;
+        color: $default-font-color;
+        float: left;
+        margin-right: 8px;
+        margin-bottom: 6px;
+      }
+
+      .add-tag {
+        margin-right: 8px;
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  .page-analysis-detail {
+    padding: 12px 0;
+    line-height: 20px;
+
+    h3 {
+      font-size: $default-font-size;
+      color: $default-white-color;
+      margin-bottom: 12px;
+
+      .legend-container {
+        float: right;
+        color: $sub-font-color;
+        font-size: $small-font-size;
+        font-weight: normal;
+
+        i {
+          width: 20px;
+          height: 5px;
+          border-radius: 3px;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 4px;
+        }
+
+        span {
+          vertical-align: middle;
+          margin-right: 12px;
+        }
+      }
+
+      .request-legend {
+        background-color: $text-label-background-color;
+      }
+
+      .risk-request-legend {
+        background-image: linear-gradient(90deg, $default-main-color 0%, $default-error-color 100%);
+      }
+    }
+
+    .page-url-body {
+      border: $default-border;
+      border-radius: 2px;
+      padding: 8px;
+      box-sizing: border-box;
+      margin-bottom: 24px;
+
+      > div {
+        max-height: 210px;
+        overflow: auto;
+      }
+
+      .body-item {
+        font-size: $small-font-size;
+        line-height: 18px;
+      }
+
+      h4 {
+        color: $sub-font-color;
+        margin-bottom: 4px;
+      }
+
+      .body-content {
+        color: $default-font-color;
+
+        .content-body {
+          display: inline;
+        }
+
+        .content-key {
+          display: inline-block;
+          padding: 0 4px;
+          color: $default-white-color;
+          font-weight: bold;
+          background-color: $text-label-background-color;
+          border-radius: 2px;
+          margin-right: 4px;
+          margin-bottom: 4px;
+        }
+
+        .content-text {
+          margin-right: 4px;
+          word-break: break-all;
+        }
+      }
+    }
+
+    .request-risk-chart {
+      height: 86px;
+      width: 100%;
+      position: relative;
+
+      .svg-container {
+        background-color: transparent;
+      }
+    }
+
+    .dimension-btns {
+      margin-top: 24px;
+      margin-bottom: 12px;
+
+      button {
+        margin-right: 12px;
+      }
+
+      .main-btn:hover {
+        background-color: $default-button-color;
+        border: 1px solid $default-button-color;
+      }
+    }
+
+    .table-container {
+      height: 320px;
+      position: relative;
+
+      .b-table {
+        height: 100%;
+
+        .url-text {
+          color: $default-main-color;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

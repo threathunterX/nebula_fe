@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="&#x56FE;&#x5C42;_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g id="XMLID_2_">
+	<defs>
+		<path id="XMLID_3_" d="M318.656,302.92c3.953-7.932,0.77-17.559-7.162-21.538c-7.368-3.697-14.864-6.931-22.488-9.704
+			c43.692-25.158,73.24-72.213,73.24-126.148C362.246,65.282,296.964,0,216.742,0c-80.248,0-145.53,65.282-145.53,145.53
+			c0,54.063,29.702,101.247,73.599,126.353C60.61,302.535,0,385.119,0,482.181c0,8.857,7.188,16.044,16.044,16.044
+			s16.044-7.188,16.044-16.044c0-105.38,82.841-191.122,184.653-191.122c28.187,0,55.244,6.392,80.376,18.997
+			C305.05,314.061,314.677,310.852,318.656,302.92 M103.301,145.53c0-62.56,50.88-113.441,113.441-113.441
+			c62.535,0,113.415,50.88,113.415,113.441c0,62.561-50.88,113.441-113.415,113.441C154.181,258.971,103.301,208.09,103.301,145.53"
+			/>
+	</defs>
+	<use xlink:href="#XMLID_3_"  style="overflow:visible;fill-rule:evenodd;clip-rule:evenodd;"/>
+	<clipPath id="XMLID_17_">
+		<use xlink:href="#XMLID_3_"  style="overflow:visible;"/>
+	</clipPath>
+	<g id="XMLID_6_" style="clip-path:url(#XMLID_17_);">
+		<defs>
+			<rect id="XMLID_7_" x="-38545.238" y="-44860.34" width="55449.695" height="55680.734"/>
+		</defs>
+		<use xlink:href="#XMLID_7_"  style="overflow:visible;"/>
+		<clipPath id="XMLID_18_">
+			<use xlink:href="#XMLID_7_"  style="overflow:visible;"/>
+		</clipPath>
+		<rect id="XMLID_8_" x="-192.534" y="-192.534" style="clip-path:url(#XMLID_18_);" width="747.313" height="883.293"/>
+	</g>
+</g>
+<g id="XMLID_9_">
+	<defs>
+		<path id="XMLID_10_" d="M405.372,298.767c-58.792,0-106.628,47.813-106.628,106.605S346.581,512,405.372,512
+			S512,464.164,512,405.372S464.164,298.767,405.372,298.767 M405.372,327.78c14.205,0,27.342,4.108,38.808,10.793L338.55,444.18
+			c-6.685-11.466-10.793-24.603-10.793-38.808C327.757,362.596,362.572,327.78,405.372,327.78 M405.372,482.987
+			c-18.081,0-34.514-6.476-47.72-16.874l108.461-108.461c10.398,13.207,16.874,29.639,16.874,47.72
+			C482.987,448.172,448.172,482.987,405.372,482.987"/>
+	</defs>
+	<use xlink:href="#XMLID_10_"  style="overflow:visible;fill-rule:evenodd;clip-rule:evenodd;"/>
+	<clipPath id="XMLID_19_">
+		<use xlink:href="#XMLID_10_"  style="overflow:visible;"/>
+	</clipPath>
+	<g id="XMLID_14_" style="clip-path:url(#XMLID_19_);">
+		<defs>
+			<rect id="XMLID_15_" x="-34812.203" y="-40525.934" width="50134.129" height="50343.02"/>
+		</defs>
+		<use xlink:href="#XMLID_15_"  style="overflow:visible;"/>
+		<clipPath id="XMLID_20_">
+			<use xlink:href="#XMLID_15_"  style="overflow:visible;"/>
+		</clipPath>
+		<rect id="XMLID_16_" x="124.667" y="124.691" style="clip-path:url(#XMLID_20_);" width="561.409" height="561.386"/>
+	</g>
+</g>
+</svg>

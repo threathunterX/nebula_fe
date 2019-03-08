@@ -1,0 +1,94 @@
+@import "../../var";
+
+.label-creator {
+  background-color: $text-label-background-color;
+  width: 200px;
+  font-size: $small-font-size;
+
+  .label-container {
+    padding: 4px 8px;
+    max-height: 68px;
+    box-sizing: border-box;
+    white-space: normal;
+    overflow: hidden;
+
+    &:hover {
+      overflow: auto;
+    }
+
+    .label-creator-label {
+      line-height: $default-line-height;
+      padding: 0 10px;
+      display: inline-block;
+      border-radius: 10px;
+      background: $body-background-color;
+      color: $sub-font-color;
+      margin-right: 4px;
+      cursor: pointer;
+    }
+
+    .active {
+      background: $default-button-color;
+      color: $default-white-color;
+    }
+  }
+
+  .creator-footer {
+    padding: 2px 8px;
+    background-color: $default-background-color;
+    height: 24px;
+
+    .creator-container {
+      float: left;
+      cursor: pointer;
+
+      i {
+        margin-right: 4px;
+      }
+    }
+
+    input {
+      width: 100px;
+      box-sizing: border-box;
+      height: 20px;
+      line-height: 16px;
+    }
+
+    .create-btn {
+      background-color: $default-button-color;
+      color: $default-white-color;
+      outline: none;
+      border-radius: 2px;
+      border: none;
+      height: 20px;
+      padding: 0 8px;
+
+      &:hover {
+        background-color: $default-button-hover-color;
+      }
+    }
+  }
+
+  &.disabled {
+    .label-container {
+      .label-creator-label {
+        background-color: $light-input-background-color;
+        color: $disabled-button-font-color;
+        cursor: not-allowed;
+      }
+
+      .active {
+        color: $default-white-color;
+      }
+    }
+
+    .creator-container {
+      cursor: not-allowed;
+      color: $disabled-button-font-color;
+
+      i {
+        color: $disabled-button-font-color;
+      }
+    }
+  }
+}

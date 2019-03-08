@@ -1,0 +1,44 @@
+@import "../../var";
+
+.wd-notification {
+  width: 100%;
+
+  &.notification-info {
+    > div {
+      background-color: rgba($default-main-color, 0.75) !important;
+    }
+  }
+
+  &.notification-success {
+    > div {
+      background-color: rgba($default-success-color, 0.75) !important;
+    }
+  }
+
+  &.notification-error {
+    > div {
+      background-color: rgba($default-error-color, 0.75) !important;
+    }
+  }
+
+  &.notification-warning {
+    > div {
+      background-color: rgba($default-warning-color, 0.75) !important;
+    }
+  }
+
+  > div > div {
+    text-align: center !important;
+  }
+
+  button {
+    color: white !important;
+    position: absolute !important;
+    right: 20px !important;
+  }
+
+  div {
+    width: 100% !important;
+    max-width: 10000px !important;
+  }
+}

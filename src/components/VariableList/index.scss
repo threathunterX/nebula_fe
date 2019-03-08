@@ -1,0 +1,20 @@
+.variables {
+  > .item {
+    width: 100%;
+
+    > .list {
+      position: static;
+
+      > .item {
+        width: 50%;
+      }
+    }
+  }
+
+  h5 {
+    text-indent: 8px;
+    font-weight: normal;
+    color: #8692ad;
+    border-bottom: 1px solid #282e3c;
+  }
+}

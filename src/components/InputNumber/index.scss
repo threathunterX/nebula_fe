@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+@import "../../var";
+
+.rc-input-number {
+  line-height: 24px;
+  height: 24px;
+  border: none;
+  background-color: $input-background-color;
+  border-radius: 2px;
+
+  .rc-input-number-handler-active {
+    background: transparent;
+  }
+
+  .rc-input-number-input-wrap {
+    height: 24px;
+
+    input {
+      line-height: 24px;
+      height: 24px;
+      color: $default-white-color;
+      text-align: left;
+      box-sizing: border-box;
+      padding: 0 10px;
+      border-radius: 2px;
+      border: none;
+    }
+  }
+
+  .rc-input-number-handler-wrap {
+    height: 24px;
+    border: none;
+  }
+
+  .rc-input-number-handler-up {
+    border: none;
+    padding: 0;
+  }
+
+  .rc-input-number-handler {
+    span {
+      font-size: $small-font-size;
+      display: inline-block;
+      transform: scale(0.83);
+      line-height: $small-font-size;
+      color: $default-font-color;
+      font-family: "iconfont" !important;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0.2px;
+      -moz-osx-font-smoothing: grayscale;
+      cursor: pointer;
+
+      &:hover {
+        color: $sub-font-color;
+      }
+    }
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .rc-input-number-handler-up-inner {
+    vertical-align: text-bottom;
+
+    &::before {
+      content: "\E610";
+    }
+
+    &::after {
+      content: "";
+    }
+  }
+
+  .rc-input-number-handler-down-inner {
+    vertical-align: text-top;
+
+    &::before {
+      content: "\E611";
+    }
+
+    &::after {
+      content: "";
+    }
+  }
+
+  &.rc-input-number-disabled {
+    .rc-input-number-input {
+      background-color: $input-background-color;
+      color: $disabled-button-font-color;
+    }
+
+    .rc-input-number-handler {
+      span {
+        color: $disabled-button-font-color;
+        cursor: not-allowed;
+
+        &:hover {
+          color: $disabled-button-font-color;
+        }
+      }
+    }
+  }
+}
+

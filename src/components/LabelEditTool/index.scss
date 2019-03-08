@@ -1,0 +1,50 @@
+@import "../../var";
+
+.wd-label-edit-tool {
+  padding: 1px 10px;
+  border: $default-border;
+  border-radius: 11px;
+  font-size: $small-font-size;
+  color: $default-font-color;
+  float: left;
+  background-color: $text-label-background-color;
+  cursor: pointer;
+  position: relative;
+  min-width: 48px;
+  text-align: center;
+
+  .icon-plus {
+    margin-right: 4px;
+  }
+
+  .edit-tool {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: -1px;
+    padding: 1px 0;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 11px;
+    background-color: rgba($default-main-color, 0.9);
+    text-align: center;
+    color: $default-white-color;
+
+    .icon-edit {
+      color: $default-white-color;
+      margin-right: 4px;
+    }
+
+    .edit-input {
+      width: calc(100% - 20px);
+      height: 20px;
+      border: none;
+      padding: 0;
+    }
+  }
+
+  &:hover .edit-tool {
+    display: block;
+  }
+}

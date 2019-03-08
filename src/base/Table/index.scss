@@ -1,0 +1,48 @@
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th, td {
+  border: none;
+  overflow: hidden;
+}
+
+thead th {
+  text-align: inherit;
+}
+
+//xxxx
+table {
+  font-size: 12px; //todo
+  line-height: 18px; //todo
+  color: #b6cde4; //todo
+  background-color: #282e3c; //todo
+}
+
+thead {
+  tr {
+    background-color: #353d52; //todo
+  }
+
+  th {
+    padding: 12px 8px; //todo
+  }
+}
+
+tbody {
+  tr {
+    &:hover td {
+      background-color: #1b1f2a; //todo
+    }
+
+    &:nth-child(odd) {
+      background-color: #232836; //todo
+    }
+  }
+
+  td {
+    padding: 6px 8px; //todo
+  }
+}

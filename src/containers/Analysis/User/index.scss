@@ -1,0 +1,230 @@
+@charset "UTF-8";
+
+@import "../../../var";
+
+.wd-user-analysis {
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .analysis-search {
+    float: right;
+  }
+
+  .click-chart {
+    background-color: $sub-background-color;
+    padding: 10px 5px;
+    margin-bottom: 24px;
+
+    h2 {
+      padding: 2px 8px;
+      border-bottom: none;
+    }
+
+    .chart-container {
+      height: 130px;
+    }
+  }
+
+  .trend-area {
+    margin-bottom: 24px;
+
+    .trend-area-container {
+      position: relative;
+    }
+
+    .tab {
+      display: flex;
+      font-size: 14px;
+
+      .tab-item {
+        width: 106px;
+        height: 36px;
+        line-height: 36px;
+        box-sizing: border-box;
+        color: $sub-font-color;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .active {
+        color: $default-button-color;
+        border-top: 2px solid $default-button-color;
+        background-color: $sub-background-color;
+      }
+    }
+  }
+
+  .data-contrast {
+    display: flex;
+    margin-bottom: 30px;
+
+    .data-table {
+      flex: 1;
+      margin-right: 16px;
+      height: 373px;
+      background-color: $sub-background-color;
+      position: relative;
+
+      .user-data {
+        height: calc(100% - 53px);
+      }
+
+      .data-item {
+        width: 100px;
+      }
+
+      .red-col {
+        color: $default-error-color;
+      }
+
+      .main-col {
+        color: $default-main-color;
+      }
+
+      .user-text {
+        display: inline-block;
+        background-color: $text-label-background-color;
+        padding: 0 4px;
+        border-radius: 2px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $default-main-color;
+          color: $default-white-color;
+        }
+      }
+    }
+  }
+}
+
+.wd-user-analyze {
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  h1 {
+    span {
+      margin-right: 4px;
+    }
+
+    > .iconfont {
+      font-size: 10px;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+
+    .child {
+      font-size: $default-font-size;
+      color: $default-main-color;
+    }
+  }
+
+  .click-chart {
+    background-color: $sub-background-color;
+    padding: 10px 5px;
+    margin-bottom: 24px;
+
+    h2 {
+      padding: 2px 8px;
+      border-bottom: none;
+    }
+
+    .chart-container {
+      height: 130px;
+    }
+  }
+
+  .analysis-card-bar {
+    .location-card,
+    .point-card {
+      position: relative;
+    }
+  }
+
+  .analysis-search {
+    float: right;
+  }
+
+  .trend-area {
+    margin-bottom: 24px;
+    position: relative;
+
+    .tab {
+      display: flex;
+      font-size: 14px;
+
+      .tab-item {
+        width: 106px;
+        height: 36px;
+        line-height: 36px;
+        box-sizing: border-box;
+        color: $sub-font-color;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .active {
+        color: $default-button-color;
+        border-top: 2px solid $default-button-color;
+        background-color: $sub-background-color;
+      }
+    }
+
+    .to-stream {
+      position: absolute;
+      bottom: 25px;
+      line-height: 40px;
+      background-color: rgba($default-black-color, 0.5);
+      color: $default-white-color;
+      font-size: $default-font-size;
+      box-shadow: $default-box-shadow;
+      transition: right 300ms ease;
+      right: -110px;
+      border-radius: 2px;
+      cursor: pointer;
+
+      i {
+        margin-left: 20px;
+        font-size: $small-font-size;
+        color: $default-white-color;
+        margin-right: 12px;
+      }
+
+      span {
+        margin-right: 20px;
+      }
+
+      &:hover {
+        right: -34px;
+      }
+    }
+  }
+
+  .to-analyze {
+    position: absolute;
+    bottom: -24px;
+    line-height: 40px;
+    background-color: rgba($default-black-color, 0.5);
+    color: $default-white-color;
+    font-size: $default-font-size;
+    box-shadow: $default-box-shadow;
+    transition: right 300ms ease;
+    right: -110px;
+    border-radius: 2px;
+    cursor: pointer;
+
+    i {
+      margin-left: 20px;
+      font-size: $small-font-size;
+      color: $default-white-color;
+      margin-right: 12px;
+    }
+
+    span {
+      margin-right: 20px;
+    }
+
+    &:hover {
+      right: -34px;
+    }
+  }
+}

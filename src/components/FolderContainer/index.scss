@@ -1,0 +1,134 @@
+@import "../../var";
+
+.wd-folder-container {
+  width: 100%;
+  height: 100%;
+
+  > header {
+    line-height: 21px;
+    height: 21px;
+    padding: 4px 21px;
+    background: $sub-title-background-color;
+    border-radius: 2px;
+    font-size: $default-font-size;
+    color: $sub-font-color;
+    font-weight: normal;
+
+    .folder-path {
+      width: 70%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .icon-copy {
+      float: right;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:hover {
+        color: $default-main-color;
+      }
+    }
+  }
+
+  .folder-body {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 29px);
+
+    .directory-container {
+      width: 50%;
+
+      .directory-body {
+        width: 100%;
+        height: 100%;
+        line-height: 18px;
+        white-space: nowrap;
+        overflow-x: auto;
+
+        .folder-list {
+          width: 30%;
+          height: 100%;
+          overflow: auto;
+          border-right: 1px solid $default-background-color;
+          font-size: $small-font-size;
+          color: $default-font-color;
+          padding: 4px 0;
+          display: inline-block;
+          vertical-align: top;
+          box-sizing: border-box;
+
+          &:last-child {
+            //border: none;
+          }
+
+          li {
+            padding: 4px 8px;
+            cursor: pointer;
+
+            &.split-line {
+              border-top: $default-border;
+            }
+
+            &.active,
+            &:hover {
+              background-color: $body-background-color;
+            }
+
+            .folder-name {
+              width: calc(100% - 70px);
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: inline-block;
+              vertical-align: top;
+            }
+
+            .path-detail {
+              width: 70px;
+              text-align: right;
+              display: inline-block;
+            }
+
+            .icon-eyeo {
+              display: none;
+              font-size: 16px;
+              float: right;
+              margin-right: 16px;
+
+              &:hover {
+                color: $default-main-color;
+              }
+            }
+
+            //&.has-child:hover {
+            //  .size-text {
+            //    display: none;
+            //  }
+            //
+            //  .icon-eyeo {
+            //    display: inline-block;
+            //  }
+            //}
+
+            .empty-icon {
+              float: right;
+              width: 10px;
+              height: 10px;
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+
+    .open-detail-container {
+      position: relative;
+      width: 50%;
+      overflow: auto;
+      border-left: 1px solid $default-background-color;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+@import "../../var";
+
+.toast-mask {
+  position: fixed;
+  transition: all 500ms ease;
+  z-index: 1000;
+
+  .toast-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba($default-black-color, 0.8);
+    padding: 12px;
+    line-height: 17px;
+    color: $default-font-color;
+    border-radius: 2px;
+    font-size: $small-font-size;
+
+    .icon-exclamationcircle {
+      color: $default-main-color;
+      font-size: $small-font-size;
+      margin-right: 4px;
+    }
+
+    .icon-crosscircle {
+      color: $default-error-color;
+      font-size: $small-font-size;
+      margin-right: 4px;
+    }
+
+    .icon-cross {
+      cursor: pointer;
+      font-size: $small-font-size;
+      margin-left: 4px;
+    }
+
+    .toast-title {
+      font-size: $default-font-size;
+      margin-bottom: 6px;
+
+      .icon-cross {
+        float: right;
+      }
+    }
+  }
+
+  .confirm-container {
+    width: 235px;
+
+    .toast-content {
+      font-size: $small-font-size;
+    }
+
+    .toast-btns {
+      margin-top: 24px;
+      margin-bottom: 4px;
+      text-align: center;
+
+      .confirm-btn {
+        background-color: $default-button-color2;
+        border: 1px solid $default-button-color2;
+        color: $default-button-color;
+        margin-right: 20px;
+
+        &:hover {
+          background-color: $default-button2-hover-color;
+          border: 1px solid $default-button2-hover-color;
+        }
+      }
+
+      .cancel-btn {
+        background-color: transparent;
+        border: 1px solid $default-button-color2;
+        color: $default-white-color;
+
+        &:hover {
+          background-color: $ghost-button-hover-color;
+          border: 1px solid $ghost-button-hover-color;
+          color: $default-white-color;
+        }
+      }
+    }
+  }
+}

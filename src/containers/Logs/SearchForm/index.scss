@@ -1,0 +1,147 @@
+@import "../../../var";
+
+$col-index-width: 50px;
+$label-width: 60px;
+
+.log-search-form {
+  padding: 24px $default-padding 24px $col-index-width;
+  font-size: $small-font-size;
+  color: $default-font-color;
+
+  input {
+    height: 30px;
+    background: $dark-input-background-color;
+
+    &[disabled] {
+      color: $sub-font-color;
+    }
+  }
+
+  .normal-input {
+    width: 220px;
+  }
+
+  .date-picker-container {
+    background: $dark-input-background-color;
+  }
+
+  .icon-calendar {
+    display: inline-block;
+    width: 20px;
+    height: 30px;
+    line-height: 22px;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin-left: -1px;
+  }
+
+  > section {
+    display: inline-block;
+    vertical-align: top;
+
+    &:first-of-type {
+      width: 300px;
+      min-width: 250px;
+      margin-right: 40px;
+    }
+
+    &:nth-of-type(2) {
+      width: calc(100% - 340px);
+      min-width: 625px;
+    }
+  }
+
+  .form-item,
+  li {
+    margin-bottom: 12px;
+    vertical-align: top;
+  }
+
+  .form-item.error {
+    .form-item-value {
+      border: $default-border;
+      border-color: $default-error-color;
+    }
+  }
+
+  .form-item-error {
+    padding-left: 60px;
+    color: $default-error-color;
+
+    &::before {
+      content: "❉ ";
+    }
+  }
+
+  .label {
+    display: inline-block;
+    width: $label-width;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: top;
+    text-align: right;
+    margin-right: 12px;
+
+    + * {
+      display: inline-block;
+      width: calc(100% - 80px);
+      vertical-align: top;
+    }
+
+    + input {
+      width: 220px;
+    }
+  }
+
+  .selector {
+    background: $dark-input-background-color;
+    height: auto;
+    margin-right: 12px;
+
+    &.disabled {
+      .selector-text {
+        color: $sub-font-color;
+      }
+    }
+
+    .selector-text {
+      height: 28px;
+      background: $dark-input-background-color;
+    }
+
+    &:first-of-type {
+      width: 160px;
+    }
+
+    &:last-child {
+      width: 220px;
+      margin-right: 0;
+    }
+
+    &:nth-of-type(2) {
+      width: 96px;
+    }
+  }
+
+  .iconfont {
+    &.disabled {
+      color: $disabled-button-color;
+    }
+  }
+
+  .icon-minuscircleo {
+    margin-left: 12px;
+    margin-right: 8px;
+  }
+
+  .tag {
+    float: left;
+    line-height: 20px;
+    background-color: transparent;
+    border: 1px solid $disabled-button-color;
+    color: $default-font-color;
+    border-radius: 10px;
+    padding: 0 8px;
+    margin: 3px;
+  }
+}

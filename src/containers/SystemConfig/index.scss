@@ -1,0 +1,236 @@
+@import "~rc-radio/assets/index";
+@import '../../components/InputNumber/index';
+@import "../../var";
+
+.rc-radio-inner {
+  background: $sub-background-color !important;
+  border-color: $default-main-color !important;
+  vertical-align: middle;
+
+  &::after {
+    background-color: $default-main-color !important;
+    width: 8px !important;
+    height: 8px !important;
+    left: 3px !important;
+    top: 3px !important;
+  }
+}
+
+.system-config {
+  overflow: auto;
+
+  .config-container {
+    min-height: 600px;
+    margin-top: 12px;
+    margin-bottom: 30px;
+    padding: 12px;
+    background-color: $sub-background-color;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .config-describe {
+    padding: 12px;
+    background-color: $text-label-background-color;
+    color: $default-font-color;
+
+    .describe-title {
+      padding: 0 12px;
+      border-bottom: none;
+    }
+
+    .describe-content {
+      font-size: $small-font-size;
+      line-height: 16px;
+      margin-top: 11px;
+      padding: 0 58px;
+    }
+  }
+
+  .config-content {
+    padding: 30px 30px 0;
+    color: $default-font-color;
+    font-size: $default-font-size;
+
+    > div {
+      padding-bottom: 50px;
+    }
+
+    .text-field {
+      font-size: $default-font-size;
+      height: 32px;
+      box-sizing: border-box;
+    }
+
+    .normal-input {
+      width: 55%;
+    }
+
+    .content-label {
+      display: inline-block;
+      width: 20%;
+      text-align: right;
+      margin-right: 27px;
+      vertical-align: top;
+      line-height: 32px;
+    }
+
+    .label-list {
+      display: inline-block;
+      width: 55%;
+      padding: 6px 8px 2px;
+
+      .label-item {
+        line-height: 24px;
+        height: 24px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .config-footer {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 24px;
+    left: 0;
+    font-size: $default-font-size;
+    padding: 0;
+
+    button {
+      height: 32px;
+      box-sizing: border-box;
+      line-height: 20px;
+      padding: 6px 16px;
+    }
+
+    .save {
+      background-color: $default-button-color;
+      color: $default-white-color;
+      border: 1px solid $default-button-color;
+      margin-right: 32px;
+
+      &:hover {
+        background-color: $default-button-hover-color;
+        border: 1px solid $default-button-hover-color;
+      }
+    }
+
+    .cancel {
+      background-color: transparent;
+      border: 1px solid $default-button-color;
+      color: $default-button-color;
+
+      &:hover {
+        background-color: $default-button-color;
+        color: $default-white-color;
+        border: 1px solid $default-button-color;
+      }
+    }
+  }
+}
+
+.mail-alarm {
+  width: 80%;
+  margin: auto;
+
+  > div {
+    padding: 10px;
+
+    .divide {
+      margin-right: 8px;
+    }
+  }
+
+  .mail-status {
+    .switch {
+      margin-top: 8px;
+    }
+  }
+
+  .SMTP-server {
+    .port {
+      width: 96px;
+    }
+
+    .normal-input {
+      width: 45%;
+    }
+
+    .SSL {
+      vertical-align: middle;
+    }
+
+    .check {
+      display: inline-block;
+      box-sizing: border-box;
+      width: 14px;
+      height: 14px;
+      padding: 3px;
+      border-radius: 100%;
+      background-color: $text-label-background-color;
+      border: 1px solid $disabled-button-font-color;
+      vertical-align: middle;
+
+      &.active {
+        border: 1px solid $default-button-color;
+
+        span {
+          display: block;
+          width: 100%;
+          height: 100%;
+          border-radius: 100%;
+          background-color: $default-button-color;
+        }
+      }
+    }
+  }
+
+  .mail-frequency {
+    .frequency-input {
+      width: 96px;
+      height: 32px;
+      box-sizing: border-box;
+      padding: 4px 0;
+    }
+
+    .minute {
+      vertical-align: middle;
+      font-size: $small-font-size;
+      color: $sub-font-color;
+    }
+  }
+}
+
+.suffix-encrypt {
+  width: 80%;
+  margin: auto;
+
+  > div {
+    padding: 10px 10px 0;
+  }
+}
+
+.traffic-filter {
+  width: 80%;
+  margin: auto;
+
+  > div {
+    padding: 10px 10px 0;
+  }
+
+  .label-list {
+    display: inline-block;
+    width: 60%;
+    padding: 6px 8px 2px;
+  }
+}
+
+.log-message {
+  width: 80%;
+  margin: auto;
+
+  > div {
+    padding: 10px 10px 0;
+  }
+}

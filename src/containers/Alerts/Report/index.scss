@@ -1,0 +1,447 @@
+@charset "UTF-8";
+
+@import "../../../var";
+
+.wd-report {
+  width: 100%;
+  position: relative;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+
+  .report-container {
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    .logo {
+      height: 35px;
+      width: 54px;
+    }
+
+    .title-container {
+      display: inline-block;
+      margin-left: 9px;
+
+      .title-text {
+        margin-bottom: 4px;
+      }
+
+      .time-range {
+        font-size: $small-font-size;
+        color: $default-font-color;
+        line-height: 12px;
+        font-weight: normal;
+      }
+    }
+
+    .main-btn {
+      float: right;
+      margin-top: 12px;
+
+      .iconfont {
+        color: inherit;
+        margin-right: 6px;
+      }
+    }
+  }
+
+  .risk-trend-type {
+    display: flex;
+    height: 280px;
+    width: 100%;
+    margin-top: 24px;
+
+    h2 {
+      padding-bottom: 4px;
+      border-bottom: none;
+
+      .legend {
+        float: right;
+        font-size: $small-font-size;
+        color: $default-font-color;
+        font-weight: normal;
+
+        .legend-icon {
+          width: 20px;
+          height: 4px;
+          display: inline-block;
+          vertical-align: top;
+          margin-top: 8px;
+          border-radius: 2px;
+          margin-right: 8px;
+          background-image: linear-gradient(-270deg, $default-main-color 0%, $default-error-color 100%);
+        }
+      }
+    }
+
+    .risk-trend {
+      flex: 1;
+      height: 100%;
+      background-color: $sub-background-color;
+      margin-right: 16px;
+
+      .trend-chart {
+        height: 240px;
+        width: 100%;
+
+        .svg-container {
+          overflow: visible;
+        }
+
+        .y-right-axis-text {
+          font-size: $small-font-size;
+          fill: $default-font-color;
+          transform: translate(12px, 4px);
+        }
+
+        .x-axis-text {
+          font-size: $small-font-size;
+          fill: $default-font-color;
+          transform: translate(10px, -32px);
+        }
+      }
+    }
+
+    .risk-type {
+      width: 400px;
+      height: 100%;
+      background-color: $sub-background-color;
+    }
+
+    .pie-container {
+      width: 100%;
+      height: 120px;
+      margin-top: 54px;
+      display: flex;
+      box-sizing: border-box;
+      padding: 0 28px;
+
+      .pie-chart {
+        width: 120px;
+        height: 120px;
+      }
+
+      .legend {
+        flex: 1;
+        height: 100%;
+        margin-left: 50px;
+        padding-right: 24px;
+        box-sizing: border-box;
+      }
+
+      .legend-item {
+        line-height: 20px;
+        height: 20px;
+        font-size: $small-font-size;
+        color: $default-font-color;
+
+        .point {
+          height: 8px;
+          width: 8px;
+          display: inline-block;
+          vertical-align: middle;
+          border-radius: 100%;
+          margin-right: 8px;
+        }
+
+        .percent {
+          float: right;
+        }
+      }
+    }
+  }
+
+  .user-ip-risk {
+    width: 100%;
+    height: 365px;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+
+    .progress-chart-container {
+      width: 30%;
+      min-width: 300px;
+      line-height: 333px;
+      text-align: center;
+      position: relative;
+
+      .progress-chart {
+        height: 180px;
+        width: 100%;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .progress-info-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 150px;
+        height: 90px;
+
+        .icon-team {
+          display: block;
+          font-size: 30px;
+          line-height: 30px;
+          margin-bottom: 12px;
+          color: $default-error-color;
+        }
+
+        .ip-icon {
+          margin: 0 auto 12px;
+          color: $default-error-color;
+          font-size: 20px;
+          line-height: 30px;
+          height: 30px;
+          width: 30px;
+          border: 2px solid $default-error-color;
+          border-radius: 100%;
+          box-sizing: border-box;
+
+          span {
+            line-height: 26px;
+            vertical-align: top;
+          }
+        }
+
+        .count {
+          font-size: 24px;
+          line-height: 24px;
+          color: $default-white-color;
+          font-weight: bold;
+          margin-bottom: 7px;
+          word-break: break-all;
+
+          span {
+            font-size: 12px;
+            font-weight: normal;
+          }
+        }
+
+        .explain {
+          font-size: $small-font-size;
+          line-height: $small-font-size;
+          color: $default-font-color;
+        }
+      }
+    }
+  }
+
+  .geo-url-container {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 16px 16px;
+
+    .ip-geo {
+      height: 333px;
+      flex: 1;
+      border: $default-border;
+      margin-right: 12px;
+
+      h2 {
+        font-weight: normal;
+        border-bottom: none;
+        margin-bottom: 40px;
+      }
+
+      .ip-geo-chart {
+        height: 180px;
+
+        .data-bar {
+          rx: 2;
+          ry: 2;
+        }
+      }
+    }
+
+    .url-table {
+      height: 333px;
+      width: 598px;
+    }
+  }
+
+  .risk-container {
+    margin-top: 24px;
+    background-color: $sub-background-color;
+    overflow: hidden;
+  }
+
+  .table-container {
+    flex: 1;
+    border: $default-border;
+
+    .b-table-body-row {
+      border: none;
+    }
+
+    .b-table-body-column {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+
+    .light-label {
+      display: inline-block;
+      line-height: 21px;
+      background-color: $text-label-background-color;
+      padding: 0 4px;
+      border-radius: 2px;
+    }
+
+    .label-container {
+      float: left;
+      margin-right: 19px;
+
+      .label {
+        display: inline-block;
+        line-height: 16px;
+        height: 16px;
+        background-color: $light-input-background-color;
+        border-radius: 8px;
+        padding: 0 6px;
+        margin-left: 4px;
+      }
+    }
+
+    .table-risk-line {
+      display: inline-block;
+      height: 12px;
+      width: 61px;
+      margin-right: 16px;
+    }
+
+    .warning-text {
+      color: $default-error-color;
+    }
+  }
+
+  .report-loading-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    background: $default-background-color;
+
+    &.hide-loading {
+      animation: hide-loading 500ms 1 ease;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+
+    .load-fail {
+      text-align: center;
+
+      img {
+        height: 70px;
+        width: 70px;
+        margin-bottom: 24px;
+        vertical-align: middle;
+      }
+
+      .fail-text {
+        color: $default-font-color;
+        font-size: $middle-font-size;
+        line-height: $middle-font-size;
+      }
+    }
+
+    .report-loading-icon {
+      position: relative;
+      height: 100px;
+      width: 100px;
+      background: transparent;
+
+      .loading-svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .circle {
+        border: 1px solid;
+        border-image: linear-gradient(45deg, $default-error-color, $default-main-color) 1;
+      }
+
+      .large-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: white;
+      }
+
+      circle {
+        stroke-width: 1.5;
+      }
+
+      .stop1 {
+        stop-color: $default-error-color;
+      }
+
+      .stop2 {
+        stop-color: $default-main-color;
+      }
+
+      .loading-text {
+        text-anchor: middle;
+        fill: $default-font-color;
+        font-size: $default-font-size;
+        transform: translateY(6px);
+        animation: report-loading-flash 2s infinite ease;
+      }
+
+      .loading-complete {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-10px, -10px);
+        font-size: 25px;
+        font-weight: bold;
+        animation: loading-complete 1s 1 ease;
+      }
+    }
+  }
+}
+
+@keyframes report-loading-flash {
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loading-complete {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide-loading {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

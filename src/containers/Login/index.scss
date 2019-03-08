@@ -1,0 +1,113 @@
+@import "../../var";
+
+.wb-login {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+
+  .icon-user::before,
+  .icon-lock::before {
+    font-size: 16px;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
+  > img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 18%;
+  }
+
+  figure {
+    padding: 94px;
+  }
+
+  form {
+    position: relative;
+    width: 520px;
+    height: 360px;
+    box-sizing: border-box;
+    padding: 58px 81px;
+    border-left: $default-border;
+
+    > div {
+      position: relative;
+      margin: 10px auto;
+    }
+  }
+
+  .iconfont {
+    position: absolute;
+    margin: auto;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    bottom: 0;
+    color: $sub-font-color;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    line-height: 22px;
+    height: 50px;
+    width: 360px;
+    box-sizing: border-box;
+    text-align: center;
+
+    &::placeholder {
+      color: rgba($default-font-color, 0.34);
+    }
+
+    &:focus {
+      border: none;
+    }
+  }
+
+  input[type='text'],
+  input[type='password'] {
+    color: $default-font-color;
+    background: $default-background-color;
+    border-bottom: $default-border;
+    padding-left: 24px;
+  }
+
+  input[type='submit'] {
+    color: $default-white-color;
+    background: linear-gradient(90deg, $default-main-color, $default-success-color);
+    border-radius: 25px;
+    margin-top: 64px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .wb-error,
+  .icon-infocircleo {
+    font-size: 14px;
+    color: $default-error-color;
+  }
+
+  .wb-error {
+    position: absolute;
+    right: 80px;
+    padding-left: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  .icon-infocircleo {
+    position: absolute;
+    left: 0;
+  }
+}

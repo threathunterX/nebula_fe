@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+@import "../../var";
+
+.wb-change-pwd {
+  .pwd-form {
+    background-color: $sub-background-color;
+    color: $default-font-color;
+    font-size: $default-font-size;
+    padding: 92px 0;
+
+    > div {
+      width: 60%;
+      margin: 0 auto 20px;
+
+      .label {
+        width: 20%;
+        text-align: right;
+        margin-right: 20px;
+        display: inline-block;
+      }
+
+      .normal-input {
+        width: calc(70% - 20px);
+        height: 32px;
+        line-height: 28px;
+        box-sizing: border-box;
+        font-size: $default-font-size;
+      }
+    }
+
+    .submit-pwd {
+      display: block;
+      background-color: $default-button-color;
+      color: $default-white-color;
+      width: 128px;
+      line-height: 32px;
+      margin: 48px auto;
+      font-size: $default-font-size;
+
+      &:hover {
+        background-color: $default-button-hover-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nebula</title>
+  <link rel="stylesheet" href="..//resources/bChart.min.css"/>
+</head>
+<body>
+  <div id="root" class="wrapper">
+    <div id="chart" style="width:300px;height:300px"></div> 
+  </div>
+  <script src="..//resources/jspdf.debug.js"></script>
+  <script src="..//resources/metricsConfig.js"></script>
+  <!-- <script async src="http://40.125.201.98/threathunterTracker.js?v1"></script> -->
+
+  <script src="https://d3js.org/d3.v3.min.js"></script>  
+  <!-- 指定v3-->
+  <script src="..//resources/bChart.js"></script>  
+
+  <script>
+     BCharts.BarChart("#chart");
+    
+    //to change background of barchart: 
+    BCharts("#chart").background("color", "#ccc")
+    
+    //to load data:
+    BCharts("#chart").load([['data1', '45', '32', '15']]);
+
+  </script>
+</body>
+</html>

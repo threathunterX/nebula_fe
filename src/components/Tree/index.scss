@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+@import "../../var";
+
+.wd-tree {
+  .tree-container {
+    overflow: hidden;
+    padding-left: 20px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    .folder {
+      display: inline-block;
+      width: 20px;
+      cursor: pointer;
+    }
+
+    .tree-item {
+      font-size: $default-font-size;
+      color: $default-font-color;
+      text-decoration: none;
+      cursor: pointer;
+
+      .item-text {
+        padding-right: 8px;
+      }
+    }
+
+    .label-item {
+      float: left;
+      line-height: 19px;
+      padding: 0 10px;
+      margin-right: 6px;
+      margin-bottom: 5px;
+      background-color: $body-background-color;
+      border-radius: 10px;
+      color: $sub-font-color;
+      font-size: $small-font-size;
+      cursor: pointer;
+
+      &.checked {
+        background-color: $default-main-color;
+        color: $default-white-color;
+      }
+
+      &.disabled {
+        background-color: $disabled-button-color;
+        color: $disabled-button-font-color;
+      }
+
+      &.disabled.checked {
+        background-color: $disabled-button-color;
+        color: $default-white-color;
+      }
+    }
+
+    .disabled {
+      cursor: not-allowed;
+    }
+  }
+}

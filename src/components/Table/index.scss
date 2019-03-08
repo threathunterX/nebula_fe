@@ -1,0 +1,96 @@
+@import "../../var";
+
+//table选中颜色
+$table-selected-background-color: $body-background-color;
+
+.nebula-table-wrapper {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.nebula-table {
+  background: $sub-background-color;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  box-sizing: border-box;
+}
+
+.nebula-table-header-column,
+.nebula-row-column {
+  font-size: $small-font-size;
+  text-align: left;
+  overflow: visible;
+  box-sizing: border-box;
+  padding-left: 16px;
+  position: relative; //todo
+  &:last-child {
+    padding-right: 16px;
+  }
+
+  .nebula-row-content {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+.nebula-table-header-column {
+  background: $sub-title-background-color;
+  color: $default-font-color;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  line-height: 17px;
+}
+
+.nebula-row-column {
+  color: $default-font-color;
+  line-height: $default-line-height;
+}
+
+.nebula-header-table {
+  background: $sub-title-background-color;
+}
+
+.nebula-body-table {
+  height: calc(100% - 41px);
+  position: relative;
+  background: $sub-background-color;
+  overflow: hidden;
+
+  &:hover {
+    overflow-y: auto;
+  }
+}
+
+.nebula-table-row {
+  border-bottom: $default-border;
+  color: $default-font-color;
+  background: $sub-background-color;
+
+  &.selected {
+    background: $table-selected-background-color;
+  }
+
+  &.hovered {
+    background: $table-selected-background-color;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: $default-line-height;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: $default-font-color;
+  padding: 0 5px;
+  font-size: $small-font-size;
+  border-radius: 2px;
+  z-index: 99;
+  pointer-events: none;
+}

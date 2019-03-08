@@ -1,0 +1,12 @@
+.sticky-table {
+  height: 100%;
+
+  .thead {
+    height: 42px;
+  }
+
+  .tbody {
+    height: calc(100% - 42px);
+    overflow: auto;
+  }
+}

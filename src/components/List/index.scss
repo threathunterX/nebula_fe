@@ -1,0 +1,22 @@
+@import "../../var";
+
+.wd-list-container {
+  .pointer {
+    cursor: pointer;
+  }
+
+  .list-content {
+    padding: 2px 12px;
+    line-height: $default-line-height;
+    font-size: $default-font-size;
+    color: $default-font-color;
+
+    .list-text {
+      margin-right: 5px;
+    }
+  }
+
+  .list-children {
+    padding-left: 12px;
+  }
+}

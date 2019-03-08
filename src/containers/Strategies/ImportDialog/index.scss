@@ -1,0 +1,195 @@
+@import "../../../var";
+
+.strategies-import-dialog {
+  &.dialog-container {
+    width: 800px;
+    padding: 12px;
+    box-sizing: border-box;
+
+    > .dialog-title {
+      height: auto;
+      padding: 0;
+      line-height: 20px;
+
+      > span {
+        font-size: $default-font-size;
+      }
+
+      > .icon-cross {
+        font-size: $small-font-size;
+      }
+    }
+
+    > .dialog-content {
+      margin-top: 16px;
+      padding: 0;
+
+      > .dialog-btns {
+        text-align: right;
+      }
+    }
+  }
+
+  .readin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 200px;
+    height: 248px;
+    border: 1px dashed $default-border-color;
+    margin-left: 16px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: $small-font-size;
+    color: $input-disabled-color;
+
+    > .iconfont {
+      color: $default-button-color;
+      font-size: 24px;
+      margin-bottom: 12px;
+
+      &::before {
+        content: "\E671";
+      }
+    }
+
+    &:hover,
+    &.drag-over {
+      border-color: $default-main-color;
+
+      > .iconfont {
+        &::before {
+          content: "\E63C";
+        }
+      }
+    }
+
+    &.disabled {
+      border-color: $default-border-color;
+
+      > .iconfont {
+        color: inherit;
+
+        &::before {
+          content: "\E671";
+        }
+      }
+    }
+  }
+
+  .readout {
+    float: left;
+    width: calc(100% - 200px - 16px);
+    height: 248px;
+    border: 1px solid $default-border-color;
+    box-sizing: border-box;
+    padding: 4px;
+    overflow: scroll;
+  }
+}
+
+.strategies-import-result {
+  &.dialog-container {
+    width: 532px;
+    padding: 16px;
+    box-sizing: border-box;
+
+    > .dialog-title {
+      height: auto;
+      padding: 0;
+      line-height: 20px;
+
+      > span {
+        font-size: $default-font-size;
+      }
+
+      > .icon-cross {
+        font-size: $small-font-size;
+      }
+    }
+
+    > .dialog-content {
+      margin-top: 16px;
+      padding: 0;
+
+      > .dialog-btns {
+        text-align: right;
+      }
+    }
+  }
+
+  & .success,
+  & .error {
+    background-color: $text-label-background-color;
+    font-size: $small-font-size;
+    color: $default-font-color;
+    padding: 6px 0;
+    border-radius: 2px;
+
+    &:not(:first-of-type) {
+      margin-top: 4px;
+    }
+
+    > .iconfont {
+      float: left;
+      margin: auto 8px;
+    }
+
+    .icon-checkcircle {
+      color: $default-success-color;
+    }
+
+    .icon-crosscircle {
+      color: $default-error-color;
+    }
+
+    > .summary {
+      margin-left: 28px;
+    }
+
+    > .details {
+      margin-left: 28px;
+
+      > li {
+        float: left;
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+.strategies-import-group {
+  margin-bottom: 2px;
+
+  header {
+    background-color: $sub-title-background-color;
+    color: $default-font-color;
+    font-size: $small-font-size;
+    font-weight: normal;
+    line-height: 17px;
+    padding: 6px 12px;
+    border-radius: 2px;
+
+    .title {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+
+    .icon-caretup,
+    .icon-caretdown {
+      float: right;
+    }
+  }
+}
+
+.strategies-import-items {
+  padding: 8px 24px;
+}
+
+.strategies-import-item {
+  float: left;
+  margin-right: 24px;
+  color: $default-font-color;
+}

@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+@import "../../var";
+
+.wd-user-manage {
+  .tab-item {
+    width: 74px;
+    text-align: center;
+  }
+
+  h2 {
+    padding: 13px 24px;
+    overflow: hidden;
+    text-align: right;
+
+    a {
+      font-size: $small-font-size;
+      text-decoration: underline;
+      font-weight: normal;
+      cursor: pointer;
+    }
+  }
+
+  .operate {
+    width: 170px;
+
+    .edit {
+      line-height: 22px;
+      padding: 0 10px;
+      background-color: $default-button-color;
+      color: $default-white-color;
+      margin-right: 40px;
+      border: none;
+
+      &:hover {
+        background-color: $default-button-hover-color;
+        color: $default-white-color;
+      }
+    }
+  }
+
+  .group-manage-table {
+    background-color: $sub-background-color;
+    margin-top: 12px;
+  }
+
+  .user-manage-table {
+    background-color: $sub-background-color;
+    margin-top: 12px;
+
+    a {
+      line-height: 25px;
+    }
+
+    .manage-search {
+      margin-right: 18px;
+    }
+  }
+}
+
+.wd-manage-info {
+  width: 320px;
+  margin: auto;
+
+  .text-field {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .input-margin {
+    margin-bottom: 20px;
+  }
+
+  .normal-input {
+    width: 100%;
+    display: inline-block;
+    background: $dark-input-background-color;
+    height: 32px;
+    font-size: $default-font-size;
+  }
+
+  .pwd-input {
+    width: 100%;
+    position: relative;
+
+    .active {
+      color: $default-main-color;
+    }
+
+    input {
+      padding-right: 28px;
+    }
+
+    i {
+      position: absolute;
+      display: inline-block;
+      right: 0;
+      top: 0;
+      line-height: 32px;
+      padding: 0 8px;
+    }
+
+    a {
+      position: absolute;
+      top: 0;
+      right: -70px;
+      line-height: 32px;
+      font-size: $default-font-size;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .group-selector {
+    width: 100%;
+    background: $dark-input-background-color;
+    height: 32px;
+    margin-bottom: 20px;
+
+    input {
+      font-size: $default-font-size;
+      height: 32px;
+      background: $dark-input-background-color;
+    }
+  }
+
+  .privileges {
+    display: flex;
+
+    .label {
+      color: $default-font-color;
+      margin-right: 12px;
+      font-size: $default-font-size;
+    }
+
+    .right-tree {
+      flex: 1;
+      max-height: 300px;
+      overflow: auto;
+    }
+  }
+}

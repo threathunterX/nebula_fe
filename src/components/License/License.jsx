@@ -27,7 +27,7 @@ export default class License extends Component {
   }
 
   componentDidMount() {
-    this.fetchLicense();
+    // this.fetchLicense();
     License.addResizeListener();
   }
 
@@ -49,12 +49,12 @@ export default class License extends Component {
 
     return (
       <div className="license">
-        <p className="label">
-          <i className="iconfont icon-infocircleo" />
-        </p>
-        <div className="info">
-          <div>{version}(剩余 {expire} 天)</div>
-        </div>
+        {/*<p className="label">*/}
+          {/*<i className="iconfont icon-infocircleo" />*/}
+        {/*</p>*/}
+        {/*<div className="info">*/}
+          {/*<div>{version}(剩余 {expire} 天)</div>*/}
+        {/*</div>*/}
       </div>
     );
   }

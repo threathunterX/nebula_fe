@@ -15,6 +15,23 @@ import * as RedqService from '../../services/RedqService';
 import HttpService from '../../components/HttpService';
 import SvgIcon from '../../components/SvgIcon';
 import './index.scss';
+import EasyToast from '../EasyToast';
+import Dialog from '../Dialog';
+import BTable from '../BTable';
+import TableExpendData from '../../containers/Alerts/TableExpendData2';
+
+import Notification from '../Notification';
+import PopConfirm from '../PopConfirm';
+
+const API_ALERTS = 'nebula/events';
+const API_SUPERVISOR ='/nebula/supervisor'
+const appID = 'Strategie';
+const httpRequestParam = {
+  appID,
+  module: 2
+};
+
+const notification = Notification.getNewInstance();
 
 const API_SYSTEM_PERFORMANCE = 'system/performance/digest';
 
@@ -187,7 +204,7 @@ class AppBar extends Component {
   };
 
   static getCpuChart(data) {
-    console.log(data)
+    console.log(data);
     // 初始化图表对象
     const cpuChart = new BCharts('#cpuChart');
     cpuChart
@@ -258,9 +275,39 @@ class AppBar extends Component {
 
   constructor(props) {
     super(props);
+    // const me = this;
     this.state = {
       redqStatus: RedqService.getRedqStatus(),
-      disk: 0
+      disk: 0,
+      cloneVisible: false,
+      cloneVisible2: false,
+      tailfMsg: '',
+      columns: [
+        {
+          title: 'State',
+          render: (key, item, index) => (
+            <div className={item.state ==0 ?  'status_control red' : 'status_control'} >{item.statename}</div>
+          ),
+          width: 100
+        }, {
+          title: 'Description',
+          dataIndex: 'description',
+          key: 'description',
+          width: 250
+        }, {
+          title: 'Name',
+          dataIndex: 'name',
+          key: 'name',
+          width: 250
+        }, {
+          title: 'Action',
+          width: 300,
+          render: (key, item, index) => (
+            <div><span className="start_stop" onClick={() => {this.start('start', item)}}>Start</span><span className="start_stop" style={{ margin: '0 20px' }} onClick={() => {this.start('stop', item)}}>Stop</span><span className="start_stop" onClick={() => {this.tailf(item)}}>Tail-f</span></div>
+          )
+        }],
+      items: [],
+      selectedIndex: -1
     };
     this.render = this.render.bind(this);
   }
@@ -268,6 +315,7 @@ class AppBar extends Component {
   componentDidMount() {
     // 注释掉cpu 请求
     this.fetchSystemPerformance();
+    // this.fetchAlerts();
   }
 
   setValue(name, value) {
@@ -349,7 +397,65 @@ class AppBar extends Component {
       this.props.onTitleTouchTap(event);
     }
   };
+  show = () => {
+    this.fetchSUPERVISOR();
+    const _this = this;
+    this.state.timer = setInterval(() => {
+      _this.fetchSUPERVISOR();
+    },1000)
+    this.setState({
+      cloneVisible: true
+    });
+  };
+  tailf = (item) => {
+    // alert(msg);
+    HttpService.get({
+      url: API_SUPERVISOR,
+      params: { process_name: `${item.group}:${item.name}`, info: 'stdout_log' },
+      onSuccess: (data) => {
+        if (data.status_code == 200) {
+          this.setState({ tailfMsg: data.result[0], cloneVisible2: true });
+        }
+      },
+      onError: () => {
+        notification.error('服务异常，请重试。');
+      }
+    });
+  };
+  start = (msg, item) => {
+    if (item.statename == 'RUNNING' && msg == 'start') {
+      return;
+    }
+    if (item.statename == 'STOPPED' && msg == 'stop') {
+      return;
+    }
+    HttpService.put({
+      url: API_SUPERVISOR,
+      params: { process_name: `${item.group}:${item.name}`, status: msg },
+      onSuccess: (data) => {
+        // console.log(data);
+      },
+      onError: () => {
+        notification.error('服务异常，请重试。');
+      }
+    });
+  }
 
+  // 获取“监控列表”
+  fetchSUPERVISOR() {
+    HttpService.get({
+      url: API_SUPERVISOR,
+      params: { info: 'process_info' },
+      onSuccess: (data) => {
+        if (data.status_code == 200) {
+          this.setState({ items: data.result });
+        }
+      },
+      onError: () => {
+        notification.error('服务异常，请重试。');
+      }
+    });
+  }
   render() {
     const {
       title,
@@ -492,6 +598,10 @@ class AppBar extends Component {
         <span />
 
         <div className="app-title-bar">
+          <span style={{ cursor: 'pointer' }} onClick={this.show}>
+            <i className="iconfont icon-jiankong" style={{ fontSize: '17px' }} />
+            <span style={{ margin: '0 40px 0 8px' }} >系统监控</span>
+          </span>
           <span>CPU</span>
 
           <div id="cpuChart" className="mini-chart" />
@@ -506,16 +616,62 @@ class AppBar extends Component {
             </div>
             <div className="disk-percent">{`${this.state.disk}%`}</div>
           </div>
-          {/*<span className="redq">RED.Q服务</span>*/}
-          {/*<Switch*/}
-            {/*className="switch"*/}
-            {/*defaultValue={this.state.redqStatus}*/}
-            {/*checked={this.state.redqStatus}*/}
-            {/*onChange={(value) => {*/}
-              {/*this.setValue('redqStatus', value);*/}
-            {/*}}*/}
-          {/*/>*/}
+          {/* <span className="redq">RED.Q服务</span> */}
+          {/* <Switch */}
+          {/* className="switch" */}
+          {/* defaultValue={this.state.redqStatus} */}
+          {/* checked={this.state.redqStatus} */}
+          {/* onChange={(value) => { */}
+          {/* this.setValue('redqStatus', value); */}
+          {/* }} */}
+          {/* /> */}
         </div>
+        <Dialog
+          visible={this.state.cloneVisible}
+          className="strategy-clone-dialog"
+          style={{ width: '800px' }}
+          destroy
+          title="运行监控"
+          onClose={() => {
+            if (this.state.timer != null) {
+              clearInterval(this.state.timer);
+            }
+            this.setState({ cloneVisible: false });
+          }}
+        >
+          <BTable
+            className="risk-table"
+            data={this.state.items}
+            columns={this.state.columns}
+            fixedHeader
+            bodyHeight="calc(100% -41px)"
+            onRowExpand={(index) => {
+              if (index === this.state.selectedIndex) {
+                this.setState({
+                  selectedIndex: -1
+                });
+                return;
+              }
+              this.setState({
+                selectedIndex: index
+              });
+            }}
+          />
+        </Dialog>
+        <Dialog
+          visible={this.state.cloneVisible2}
+          className="strategy-clone-dialog"
+          style={{ width: '700px' }}
+          destroy
+          title="日志"
+          onClose={() => {
+            this.setState({ cloneVisible2: false });
+          }}
+        >
+          <div className="log" style={{ height: '300px' } }>
+            <code className="log_code">{this.state.tailfMsg ? this.state.tailfMsg : '暂无日志信息'}</code>
+          </div>
+        </Dialog>
         {children}
       </Paper>
     );

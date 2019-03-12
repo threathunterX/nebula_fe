@@ -1,0 +1,3 @@
+window.metricsConfig = {
+  metricsSwitchOn: false
+};

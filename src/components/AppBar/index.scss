@@ -83,3 +83,36 @@
     fill: $default-button-color;
   }
 }
+
+.status_control{
+  background: #8ce081;
+  color: #000;
+  width: 60px;
+  text-align: center;
+  line-height: 18px;
+  height: 18px;
+  //border-radius: 5px;
+}
+
+.status_control.red{
+  background: red;
+}
+.start_stop{
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover{
+    color: #22c3f7;
+  }
+}
+.log{
+  overflow-y: auto;
+  padding: 0 20px;
+  .log_code{
+    color: #b6cce4;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+  }
+}
+

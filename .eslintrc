@@ -1,0 +1,38 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": [
+          "app.config",
+          "trackerjs"
+        ]
+      }
+    ],
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "react/no-string-refs": "off",
+    "camelcase": "off"
+  },
+  "globals": {
+    "html2canvas": true,
+    "JsPDF": true,
+    "ActiveXObject": true,
+    "d3": true
+  }
+}

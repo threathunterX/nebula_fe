@@ -8,5 +8,5 @@ if [ $error_count != "0"  ] ; then
 fi
 
 # 打包
-cp -R ../resources ../statics/ && tar czvf ../build/nebula_fe.tar.gz ../statics ../templates
+cd .. && cp -R resources statics/ && tar czvf nebula_fe.tar.gz statics templates && mv nebula_fe.tar.gz build/ && cd build
 

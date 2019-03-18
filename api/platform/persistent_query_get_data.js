@@ -1,5 +1,5 @@
 /**
- * Created by jason on 17/8/31.
+ * 
  */
 module.exports = {
   "status": 200,

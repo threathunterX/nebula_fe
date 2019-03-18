@@ -1,5 +1,5 @@
 /**
- * Created by jason on 17/6/29.
+ * 
  */
 import {
   InfluxDB,

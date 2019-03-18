@@ -802,7 +802,7 @@
 
 
     /**
-     * Created by CaptainMao on 5/23/15.
+     * 
      */
     BCharts.prototype.area = function (options) {
         var self = this;
@@ -934,7 +934,7 @@
     BCharts.removeAreaStrokeOpacity = BCharts.removeStyleProperty('strokeOpacity', 'area');
     BCharts.removeAreaFillOpacity = BCharts.removeStyleProperty('fillOpacity', 'area');
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     var _defaultsArea = {
         title: {
@@ -965,7 +965,7 @@
 
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype.background = function (options) {
         var self = this;
@@ -1015,7 +1015,7 @@
         }
     };
     /**
-     * Created by CaptainMao on 5/31/15.
+     * 
      */
     BCharts.prototype._drawStackBarSVG = function (options) {
         var self = this;
@@ -1239,7 +1239,7 @@
 
 
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype.options = function (options) {
         var self = this;
@@ -1545,7 +1545,7 @@
 
 
     /**
-     * Created by CaptainMao on 5/23/15.
+     * 
      */
     BCharts.prototype.bubble = function (options) {
         var self = this;
@@ -1585,7 +1585,7 @@
 
     };
     /**
-     * Created by CaptainMao on 5/23/15.
+     * 
      */
     var _defaultsBubble = {
         bubble: {
@@ -1625,7 +1625,7 @@
 
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype.colors = function (options) {
         var self = this;
@@ -1654,7 +1654,7 @@
         }
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype.stackDataset = function (_datasetInputs, groupArray, xArray) {
         var self = this;
@@ -2053,7 +2053,7 @@
 
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype.legend = function (options) {
         var self = this;
@@ -2318,7 +2318,7 @@
 
     };
     /**
-     * Created by CaptainMao on 5/23/15.
+     * 
      */
     BCharts.prototype.line = function (options) {
         var self = this;
@@ -2417,7 +2417,7 @@
     BCharts.removeLineStrokeWidth = BCharts.removeStyleProperty('strokeWidth', 'line');
     BCharts.removeLineStrokeOpacity = BCharts.removeStyleProperty('strokeOpacity', 'line');
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     var _defaultsLine = {
         title: {
@@ -2456,7 +2456,7 @@
         return self;
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype.max2 = function (options) {
         var self = this;
@@ -2529,7 +2529,7 @@
         return self;
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype.min2  = function (options) {
         var self = this;
@@ -2599,7 +2599,7 @@
         return self;
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype.node = function (options) {
         var self = this;
@@ -2720,7 +2720,7 @@
     BCharts.removeNodeStrokeOpacity = BCharts.removeStyleProperty('strokeOpacity', 'node');
     BCharts.removeNodeSolidCircle = BCharts.removeStyleProperty('solidCircle', 'node');
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     var _defaultsPie = {
         width: 400,
@@ -2969,7 +2969,7 @@
         return arc;
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     var _defaultsScatter = {
 
@@ -3010,7 +3010,7 @@
 
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype.title = function (options) {
         var self = this;
@@ -3060,7 +3060,7 @@
         }
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype.tooltip = function (options) {
         var self = this;
@@ -3413,7 +3413,7 @@
         }
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype._getComputedX = function () {
         var self = this;
@@ -3625,7 +3625,7 @@
         }
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype.xLabel = function (options) {
         var self = this;
@@ -3682,7 +3682,7 @@
         }
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
 
     BCharts.prototype._getComputedY = function () {
@@ -3938,7 +3938,7 @@
         }
     };
     /**
-     * Created by CaptainMao on 5/22/15.
+     * 
      */
     BCharts.prototype.yLabel2 = function (options) {
         var self = this;

@@ -1,5 +1,5 @@
 /**
- * Created by jason on 17/6/26.
+ * 
  */
 import { connect } from 'react-refetch';
 import {

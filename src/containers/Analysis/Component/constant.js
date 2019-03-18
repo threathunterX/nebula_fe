@@ -1,5 +1,5 @@
 /**
- * Created by jason on 17/4/5.
+ * 
  */
 export const AnalysisMap = {
   USER: 'uid',

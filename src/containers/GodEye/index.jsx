@@ -66,6 +66,7 @@ class GodEye extends Component {
     this.fetchLabels();
 
     const end = moment().startOf('minute').valueOf();
+    console.log(end)
     // 获取导弹图数据
     this.fetchThreatMap(end - 60000, end);
 
@@ -126,9 +127,12 @@ class GodEye extends Component {
             }, timeSet);
           }
         } else {
-          // 失败后立即获取
-          const end = moment().valueOf();
-          this.fetchThreatMap(end - 60000, end);
+          // 失败后2s后获取
+          const time = 2000;
+          setTimeout(() => {
+            const end = moment().valueOf();
+            this.fetchThreatMap(end - 60000, end);
+          }, time);
         }
       },
       onError: () => {

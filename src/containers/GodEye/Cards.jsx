@@ -16,8 +16,7 @@ class Cards extends Component {
   render() {
     const {
       incidents
-      } = this.props;
-
+    } = this.props;
     return (
       <div className="card-container">
         <h2>风险事件－最近1小时</h2>
@@ -64,14 +63,14 @@ class Cards extends Component {
             </div>
             <div className="labels">
               <div className="label-container">
-                {_.map(item.hit_tags, (count, label) => {
+                {_.map(item.hit_tags, (label, count) => {
                   if (!label) {
                     return '';
                   }
                   return (
-                    <div key={label} className="label-item">
-                      <span>{label}</span>
-                      <span className="label-count">{NumberFormat(count)}</span>
+                    <div key={count} className="label-item">
+                      <span>{label.key}</span>
+                      <span className="label-count">{NumberFormat(label.value)}</span>
                     </div>
                   );
                 })}
@@ -80,7 +79,7 @@ class Cards extends Component {
                 <span>关联用户:{item.users_count}</span>
                 <span>{item.peak}次请求/分钟(峰值)</span>
 
-                <p className="page">{`${item.most_visited}(${item.percent}%)`}</p>
+                <p className="page">{item.most_visited}</p>
               </div>
             </div>
           </div>

@@ -83,7 +83,7 @@ class Charts extends Component {
         endtime: to
       },
       onSuccess: (result) => {
-        const data = result.slice(result.length - 96, result.length);
+        const data = result.result.slice(result.length - 96, result.length);
 
         const alerts = _.map(data, (item) => {
           const { time_frame, production_count, test_count } = item;

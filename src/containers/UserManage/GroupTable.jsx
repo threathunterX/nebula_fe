@@ -41,7 +41,8 @@ class GroupTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nameError: false
+      nameError: false,
+      remarkError: false
     };
   }
 
@@ -85,9 +86,30 @@ class GroupTable extends Component {
     return true;
   }
 
+  // 检查名字是否错误
+  checkRemark(name) {
+    if (name === '' || name === undefined) {
+      this.setState({
+        remarkError: true
+      });
+      return false;
+    }
+    this.setState({
+      remarkError: false
+    });
+    return true;
+  }
+  submitConfirm(form) {
+    let name = this.checkName(form.name);
+    let desc = this.checkRemark(form.description);
+    if (name && desc) {
+      return true;
+    }
+    return false;
+  }
   // 确认提交
   submitForm(form, action) {
-    if (this.checkName(form.name)) {
+    if (this.submitConfirm(form)) {
       this.handleSubmit(form, action);
     }
   }
@@ -113,7 +135,7 @@ class GroupTable extends Component {
     } = this.props;
 
     const {
-      nameError
+      nameError,remarkError
     } = this.state;
 
     const timestamp = new Date().getTime();
@@ -227,17 +249,20 @@ class GroupTable extends Component {
                 this.handleChange(e.target.value, FORM_NAME);
               }}
               isError={nameError}
-              errorText="*请填写用户组名"
+              errorText="请填写用户组名"
             />
-            <input
+            <TextField
               key={timestamp + 2}
               type="text"
               placeholder="请输入备注内容"
               className="normal-input input-margin"
               defaultValue={_.get(this.props, FORM_DESCRIPTION)}
               onBlur={(e) => {
+                this.checkRemark(e.target.value);
                 this.handleChange(e.target.value, FORM_DESCRIPTION);
               }}
+              isError={remarkError}
+              errorText="请填写备注内容"
             />
 
             <div className="privileges">
